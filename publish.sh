@@ -12,7 +12,7 @@ SITE_URL="$SITE_URL" python3 tools/build.py
 
 rm -rf docs
 mkdir -p docs
-cp -R build/site/ docs/
+cp -R build/site/. docs/
 touch docs/.nojekyll
 [ -n "$DOMAIN" ] && echo "$DOMAIN" > docs/CNAME
 
