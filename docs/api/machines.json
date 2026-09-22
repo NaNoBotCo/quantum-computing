@@ -1,0 +1,227 @@
+{
+ "_about": "The ways people build a qubit. One row per hardware family. 'cold' is the working temperature in plain words. 'gate' is the two-qubit gate time and 'life' the coherence time, both rough and dated. 'best' is a machine and count with its date and source. Numbers here are what the named source said on the named date, not a live scoreboard.",
+ "families": [
+  {
+   "id": "superconducting",
+   "name": "Superconducting circuits",
+   "plain": "A qubit printed on a chip: a loop of metal with no electrical resistance, cooled so cold it behaves like one big atom.",
+   "how": "The circuit has energy rungs like an atom's. Microwave pulses move it between the bottom two rungs, and those two are 0 and 1. The transmon design from 2007 is the standard. The chip sits at the bottom of a dilution refrigerator at about 15 thousandths of a degree above absolute zero.",
+   "good": "Fast gates, tens of billionths of a second. Made with chip-factory methods, so counts grow quickly. Google, IBM and China's USTC all use it, and it is where the error-correction milestones of 2023 to 2025 happened.",
+   "bad": "Short-lived: a qubit holds its state for around a ten-thousandth of a second. Each qubit can only talk to its neighbours on the chip. Every qubit needs its own wiring into the fridge, which is the wall between hundreds and millions.",
+   "cold": "about 0.015 kelvin, colder than deep space",
+   "gate": "tens of nanoseconds",
+   "life": "0.1 to 1 millisecond",
+   "who": [
+    "Google Quantum AI",
+    "IBM",
+    "Rigetti",
+    "IQM",
+    "USTC (Zuchongzhi)",
+    "Alice & Bob (cat qubits)",
+    "AWS (Ocelot)"
+   ],
+   "best": {
+    "machine": "IBM Condor",
+    "qubits": 1121,
+    "date": "2023-12",
+    "source": "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
+    "note": "the biggest chip by count; IBM's later chips are smaller and cleaner"
+   },
+   "quality": {
+    "machine": "Google Willow",
+    "figure": "two-qubit gate error about 0.15%; error-corrected memory below threshold",
+    "date": "2024-12",
+    "source": "https://www.nature.com/articles/s41586-024-08449-y"
+   },
+   "gate_s": 4e-08,
+   "life_s": 0.0003
+  },
+  {
+   "id": "ion",
+   "name": "Trapped ions",
+   "plain": "Single charged atoms held in mid-air by electric fields, in a vacuum, with lasers doing the work.",
+   "how": "An ion, an atom missing one electron, is held by oscillating electric fields in a trap the size of a fingernail. Two of its energy levels are 0 and 1. Laser pulses, or in newer designs microwave signals through the trap's own electrodes, flip and entangle them. Ions in a chain all feel each other's charge, so any ion can be entangled with any other.",
+   "good": "The cleanest qubits there are: gate errors below one in ten thousand, and a state that lasts seconds to minutes. Every ion is identical because nature made it. Any-to-any connections.",
+   "bad": "Slow: a two-qubit gate takes millionths of a second, a thousand times slower than a superconducting chip. Chains get unwieldy past a few dozen ions, so big machines shuttle ions between zones, which costs time.",
+   "cold": "the ions are laser-cooled to near absolute zero; the trap itself can be at room temperature or mildly cooled",
+   "gate": "1 to 100 microseconds",
+   "life": "seconds to minutes",
+   "who": [
+    "Quantinuum (Honeywell)",
+    "IonQ, with Oxford Ionics",
+    "AQT",
+    "Universal Quantum",
+    "eleQtron"
+   ],
+   "best": {
+    "machine": "Quantinuum Helios",
+    "qubits": 98,
+    "date": "2025-11",
+    "source": "https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai",
+    "note": "two-qubit accuracy 99.921% at launch"
+   },
+   "quality": {
+    "machine": "Oxford single-ion gate",
+    "figure": "one error in 6.7 million single-qubit operations",
+    "date": "2025-06",
+    "source": "https://www.ox.ac.uk/news/2025-06-10-oxford-physicists-set-new-world-record-qubit-operation-accuracy"
+   },
+   "gate_s": 2e-05,
+   "life_s": 10
+  },
+  {
+   "id": "atom",
+   "name": "Neutral atoms",
+   "plain": "Ordinary uncharged atoms, hundreds or thousands of them, each pinned in a spot of laser light like a bead in tweezers.",
+   "how": "A laser is split into a grid of focused spots, and each spot traps one atom. The atoms' electron energy levels are 0 and 1. To entangle two, a laser kicks them into a hugely swollen 'Rydberg' state, in which neighbouring atoms shove each other and so become linked. The tweezers can move atoms around during a computation, so the wiring is whatever you want it to be.",
+   "good": "Counts scale fast: 6,100 atoms trapped at Caltech in 2025. Atoms can be moved, so error-correcting codes that need odd connections are easy to lay out. This is where the largest logical-qubit demonstrations have been, at Harvard and QuEra.",
+   "bad": "Atoms fall out of the tweezers and have to be replaced, which until 2025 meant stopping the machine. Gates are slower than superconducting ones and the Rydberg step is delicate. Readout is slow: a camera photographs the array.",
+   "cold": "atoms laser-cooled to millionths of a degree; vacuum chamber at room temperature",
+   "gate": "around a microsecond",
+   "life": "seconds",
+   "who": [
+    "QuEra (with Harvard and MIT)",
+    "Pasqal",
+    "Atom Computing (with Microsoft)",
+    "Infleqtion",
+    "planqc",
+    "Google (from 2026)"
+   ],
+   "best": {
+    "machine": "Caltech tweezer array",
+    "qubits": 6100,
+    "date": "2025-09",
+    "source": "https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
+    "note": "trapped and controlled, not entangled; the largest entangled processor is Harvard/QuEra's 448-atom machine of November 2025"
+   },
+   "quality": {
+    "machine": "Harvard/MIT/QuEra 448-atom processor",
+    "figure": "all the pieces of fault tolerance on one machine, errors falling as the code grew",
+    "date": "2025-11",
+    "source": "https://news.harvard.edu/gazette/story/2025/11/a-potential-quantum-leap/"
+   },
+   "gate_s": 1e-06,
+   "life_s": 2
+  },
+  {
+   "id": "photon",
+   "name": "Photons",
+   "plain": "Particles of light running through channels etched in glass or silicon, with the computation done by how they split, merge and get detected.",
+   "how": "A qubit is one photon, and 0 or 1 is which of two paths it is on, or which way it is polarised. Beam splitters and phase shifters do the one-qubit turns. Two-qubit gates are the hard part: photons ignore each other, so the trick is to make the gate happen with a measurement and try again when it fails. The 2001 KLM paper showed this can work.",
+   "good": "Room temperature for the optics (the detectors are cooled). Photons do not decohere in flight and travel down ordinary fibre, so linking modules is natural. Chips come off standard semiconductor lines.",
+   "bad": "Photons get lost, and a lost photon is an error you cannot fix by waiting. Gates only work some of the time, so the scheme needs enormous numbers of photons and detectors per useful qubit. No photonic machine has yet run a general program of any size; the headline results are sampling tasks.",
+   "cold": "optics at room temperature; single-photon detectors at about 1 kelvin",
+   "gate": "nanoseconds when it works; the gates are probabilistic",
+   "life": "limited by loss, not by time",
+   "who": [
+    "PsiQuantum",
+    "Xanadu",
+    "Quandela",
+    "USTC (Jiuzhang)",
+    "ORCA"
+   ],
+   "best": {
+    "machine": "USTC Jiuzhang 4.0",
+    "qubits": 3050,
+    "date": "2026-05",
+    "source": "https://english.cas.cn/newsroom/headlines/202605/t20260514_1159331.shtml",
+    "note": "photons detected in one sampling run; a special-purpose machine, not a programmable computer"
+   },
+   "quality": {
+    "machine": "PsiQuantum Omega chipset",
+    "figure": "chips made on a GlobalFoundries production line",
+    "date": "2025-02",
+    "source": "https://www.psiquantum.com/news-import/omega"
+   },
+   "gate_s": 1e-09
+  },
+  {
+   "id": "spin",
+   "name": "Spins in silicon",
+   "plain": "A single electron, or the nucleus of a single atom, sitting in a silicon chip made the same way as the ones in phones.",
+   "how": "An electron has a spin, a tiny magnet that points up or down, and that is the qubit. It is held in a dot a few billionths of a metre across, and microwaves flip it. Bruce Kane's 1998 idea used single phosphorus atoms in silicon; the newer designs use electrons in tiny transistor-like structures.",
+   "good": "The smallest qubits there are, and made with the tools of the chip industry, so in principle millions fit on one chip. Runs at about 1 kelvin, warmer than superconducting qubits, which makes the cooling far easier.",
+   "bad": "Counts are small so far, a dozen or so on one chip. Every dot is slightly different, so each qubit needs tuning. Wiring millions of dots is an unsolved problem, though the industry has a head start.",
+   "cold": "about 1 kelvin",
+   "gate": "tens of nanoseconds to microseconds",
+   "life": "milliseconds for electrons, seconds for nuclei",
+   "who": [
+    "Intel",
+    "Diraq",
+    "Quantum Motion",
+    "Silicon Quantum Computing",
+    "Equal1"
+   ],
+   "best": {
+    "machine": "Intel Tunnel Falls",
+    "qubits": 12,
+    "date": "2023-06",
+    "source": "https://www.intel.com/content/www/us/en/newsroom/news/quantum-computing-chip-to-advance-research.html",
+    "note": "a research chip Intel distributed to universities"
+   },
+   "quality": {
+    "machine": "UNSW nuclear spins",
+    "figure": "two-qubit gate errors below 1% and single-qubit coherence of seconds have been reported",
+    "date": "2022",
+    "source": "https://www.nature.com/articles/s41586-021-04292-7"
+   },
+   "gate_s": 1e-07,
+   "life_s": 0.005
+  },
+  {
+   "id": "topological",
+   "name": "Topological qubits",
+   "plain": "A qubit stored in the shape of how particles are arranged along a wire, so that local noise cannot see it. Nobody has shown one working for sure.",
+   "how": "The idea from Kitaev in 1997: certain exotic particles, Majorana modes, would appear at the ends of a superconducting nanowire, and information shared between the two ends could only be disturbed by something acting on both ends at once. If it works, error correction becomes far cheaper.",
+   "good": "In principle, a qubit that ignores most noise by construction, so a useful machine needs far fewer physical qubits.",
+   "bad": "Whether the Majorana modes exist in the devices is disputed. Microsoft's Majorana 1 chip of February 2025 was announced with a Nature paper that did not itself show them, and a peer-reviewed challenge in June 2026 found errors in the test Microsoft used. As of 2026 no topological qubit has run a gate.",
+   "cold": "about 0.02 kelvin",
+   "gate": "not demonstrated",
+   "life": "not demonstrated",
+   "who": [
+    "Microsoft"
+   ],
+   "best": {
+    "machine": "Microsoft Majorana 1",
+    "qubits": 8,
+    "date": "2025-02",
+    "source": "https://azure.microsoft.com/en-us/blog/quantum/2025/02/19/microsoft-unveils-majorana-1-the-worlds-first-quantum-processor-powered-by-topological-qubits/",
+    "note": "claimed; the underlying physics is contested"
+   },
+   "quality": {
+    "machine": "Majorana 2",
+    "figure": "parity lifetimes over 20 seconds, per a company paper",
+    "date": "2026-06",
+    "source": "https://thequantuminsider.com/2026/06/02/microsoft-reports-advances-in-majorana-2-following-debate-over-last-years-topological-claims/"
+   }
+  },
+  {
+   "id": "anneal",
+   "name": "Annealers",
+   "plain": "A different kind of machine: thousands of superconducting qubits that settle into a low-energy arrangement, the way a hot metal cools into its shape. It answers 'what is the cheapest arrangement' questions and cannot run general programs.",
+   "how": "You write your problem as a landscape of hills and valleys and the machine looks for the lowest valley. It starts every qubit in superposition and slowly turns on the landscape, and quantum tunnelling lets it slip through hills a hot metal would have to climb. There are no gates; you cannot run Shor's or Grover's method on it.",
+   "good": "Big counts and a commercial product since 2011. Some optimisation and physics-simulation tasks fit it well.",
+   "bad": "No proof it beats the best ordinary methods on a practical problem. The March 2025 'beyond classical' claim was reproduced on ordinary computers in May 2026. It is not what most of this site is about.",
+   "cold": "about 0.015 kelvin",
+   "gate": "no gates; a run takes microseconds",
+   "life": "not the relevant number",
+   "who": [
+    "D-Wave"
+   ],
+   "best": {
+    "machine": "D-Wave Advantage2",
+    "qubits": 4400,
+    "date": "2025-05",
+    "source": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-general-availability-of-advantage2-quantum-computer/",
+    "note": "annealing qubits, not comparable with gate-model counts"
+   },
+   "quality": {
+    "machine": "Advantage2",
+    "figure": "the 2025 Science simulation claim, reproduced classically in 2026",
+    "date": "2026-05",
+    "source": "https://www.simonsfoundation.org/2026/05/21/quantum-dynamics-breakthrough-overturns-claim-of-quantum-supremacy-opens-new-research-directions/"
+   }
+  }
+ ],
+ "_numbers": "gate_s and life_s are order-of-magnitude figures in seconds for the chart, chosen to match the 'gate' and 'life' text on each row; a family with no demonstrated gate has none."
+}

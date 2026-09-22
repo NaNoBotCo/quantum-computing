@@ -1,0 +1,378 @@
+{
+ "_about": "The recent ledger, hand-kept: one row per development from 2025 on, newest last. 'what' is one plain sentence, 'why' one sentence on what it changes. 'unconfirmed' marks a row where the source is secondary or the date is loose. The auto-fetched feed lives in recent.json; this file is edited by a person.",
+ "updated": "2026-09-22",
+ "items": [
+  {
+   "date": "2025-01-20",
+   "who": "Alice & Bob",
+   "what": "The Paris start-up raised 100 million euros to develop 'cat qubits', a superconducting qubit built so one of the two main kinds of error is suppressed in the hardware, so fewer qubits are needed for error correction.",
+   "why": "Europe's largest quantum hardware round at the time, and money behind an alternative to the surface code used by Google and IBM.",
+   "source": "https://www.hpcwire.com/off-the-wire/alice-bob-raises-e100m-to-advance-fault-tolerant-quantum-computing/",
+   "source_name": "HPCwire"
+  },
+  {
+   "date": "2025-02-11",
+   "who": "QuEra Computing",
+   "what": "The neutral-atom company closed a 230 million dollar round with Google and SoftBank as new investors; NVIDIA's venture arm joined in September 2025.",
+   "why": "Backing for neutral atoms, the hardware family that went on to produce the year's largest error-correction demonstrations.",
+   "source": "https://www.bloomberg.com/news/articles/2025-02-11/google-softbank-back-quantum-startup-quera-in-230-million-deal",
+   "source_name": "Bloomberg"
+  },
+  {
+   "date": "2025-02-19",
+   "who": "Microsoft",
+   "what": "Microsoft announced Majorana 1, a chip it said holds eight 'topological' qubits built from a new indium-arsenide and aluminium material, alongside a Nature paper on reading such devices out.",
+   "why": "The first hardware claim for a qubit type that would in principle need far less error correction. Nature's editors noted the paper itself did not show evidence of the Majorana states the chip relies on.",
+   "source": "https://azure.microsoft.com/en-us/blog/quantum/2025/02/19/microsoft-unveils-majorana-1-the-worlds-first-quantum-processor-powered-by-topological-qubits/",
+   "source_name": "Microsoft Azure Quantum blog"
+  },
+  {
+   "date": "2025-02-26",
+   "who": "PsiQuantum",
+   "what": "PsiQuantum described Omega, a set of light-based (photonic) quantum chips made on a standard GlobalFoundries production line, in a Nature paper.",
+   "why": "A quantum chipset came off a conventional semiconductor fab rather than a laboratory.",
+   "source": "https://www.psiquantum.com/news-import/omega",
+   "source_name": "PsiQuantum"
+  },
+  {
+   "date": "2025-03-03",
+   "who": "University of Science and Technology of China",
+   "what": "The team published Zuchongzhi 3.0, a 105-qubit superconducting processor, and a random-circuit sampling benchmark it estimates would take the Frontier supercomputer billions of years.",
+   "why": "China's superconducting hardware at roughly the level of Google's Willow on the same benchmark.",
+   "source": "https://link.aps.org/doi/10.1103/PhysRevLett.134.090601",
+   "source_name": "Physical Review Letters"
+  },
+  {
+   "date": "2025-03-11",
+   "who": "NIST",
+   "what": "NIST chose HQC, a code-based encryption scheme, as a fifth post-quantum standard to back up the lattice-based ML-KEM adopted in FIPS 203 in 2024, with a draft promised in about a year and a final version by 2027.",
+   "why": "A second, mathematically different lock for the internet in case the main one is picked.",
+   "source": "https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption",
+   "source_name": "NIST"
+  },
+  {
+   "date": "2025-03-12",
+   "who": "D-Wave",
+   "what": "D-Wave published in Science a simulation of magnetic materials on its Advantage2 annealer that it said would take a supercomputer nearly a million years; other groups said ordinary methods could match parts of it.",
+   "why": "The first 'beyond classical' claim on a problem with a practical shape. The dispute it started was largely settled against it in May 2026.",
+   "source": "https://www.dwavequantum.com/company/newsroom/press-release/beyond-classical-d-wave-first-to-demonstrate-quantum-supremacy-on-useful-real-world-problem/",
+   "source_name": "D-Wave"
+  },
+  {
+   "date": "2025-03-21",
+   "who": "Henry Legg (St Andrews) and others",
+   "what": "Physicists including Legg, Eun-Ah Kim and Javad Shabani said Microsoft's data were too noisy to show topological behaviour and that its 'topological gap protocol' test could give false positives.",
+   "why": "Majorana 1 became the most contested hardware claim of the period, setting up the formal Nature challenge of 2026.",
+   "source": "https://physics.aps.org/articles/v18/68",
+   "source_name": "Physics (APS)"
+  },
+  {
+   "date": "2025-03-26",
+   "who": "Quantinuum, JPMorganChase, Argonne, Oak Ridge, UT Austin",
+   "what": "Using a 56-qubit trapped-ion machine, the team generated random numbers and used supercomputers to certify they were fresh and random, published in Nature.",
+   "why": "The first published task where a quantum computer produced a result an ordinary machine could check but not fake.",
+   "source": "https://www.nature.com/articles/s41586-025-08737-1",
+   "source_name": "Nature"
+  },
+  {
+   "date": "2025-05-21",
+   "who": "Google Quantum AI (Craig Gidney)",
+   "what": "A preprint estimated that a future error-corrected computer with under one million physical qubits could break RSA-2048 encryption in under a week, down from a 2019 estimate of 20 million.",
+   "why": "The assumed timeline for the threat to today's encryption got shorter, and migration planning sped up.",
+   "source": "https://arxiv.org/abs/2505.15917",
+   "source_name": "arXiv"
+  },
+  {
+   "date": "2025-06-09",
+   "who": "IonQ",
+   "what": "IonQ agreed to buy Oxford Ionics for 1.075 billion dollars, mostly in stock; the deal closed on 16 September 2025.",
+   "why": "The two main trapped-ion companies combined, and IonQ got Oxford Ionics' laser-free electronic qubit control.",
+   "source": "https://investors.ionq.com/news/news-details/2025/IonQ-Announces-Agreement-to-Acquire-Oxford-Ionics-Accelerating-Path-to-Pioneering-Breakthroughs-in-Quantum-Computing/default.aspx",
+   "source_name": "IonQ"
+  },
+  {
+   "date": "2025-06-10",
+   "who": "IBM",
+   "what": "IBM set out a plan to build Starling, a 200-logical-qubit error-corrected computer, by 2029, using qLDPC codes it says need about a tenth of the physical qubits of the surface code; the steps named were Loon (2025), Kookaburra (2026) and Cockatoo (2027).",
+   "why": "The first dated, part-by-part roadmap to a large fault-tolerant machine from a major vendor.",
+   "source": "https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center",
+   "source_name": "IBM Newsroom"
+  },
+  {
+   "date": "2025-06-12",
+   "who": "University of Oxford",
+   "what": "Oxford physicists ran a single-qubit operation on a trapped calcium ion with one error in 6.7 million attempts, published in Physical Review Letters.",
+   "why": "The most accurate qubit operation recorded; the control electronics, not the physics, set the limit.",
+   "source": "https://www.ox.ac.uk/news/2025-06-10-oxford-physicists-set-new-world-record-qubit-operation-accuracy",
+   "source_name": "University of Oxford"
+  },
+  {
+   "date": "2025-06-19",
+   "who": "Microsoft",
+   "what": "Microsoft published a family of four-dimensional error-correcting codes it says can cut error rates a thousandfold using five to six times fewer physical qubits than the surface code, for hardware where any qubit can talk to any other.",
+   "why": "A cheaper error-correction recipe for ion, atom and photonic machines than the one designed for chips.",
+   "source": "https://azure.microsoft.com/en-us/blog/quantum/2025/06/19/microsoft-advances-quantum-error-correction-with-a-family-of-novel-four-dimensional-codes/",
+   "source_name": "Microsoft Azure Quantum blog"
+  },
+  {
+   "date": "2025-07-17",
+   "who": "Atom Computing and Microsoft",
+   "what": "Denmark's new QuNorth venture ordered Magne, a neutral-atom machine with 1,225 physical and 50 logical (error-corrected) qubits, to be built in Copenhagen and ready around the start of 2027.",
+   "why": "The first purchase of a computer specified in logical rather than raw qubits.",
+   "source": "https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/",
+   "source_name": "Quantum Computing Report"
+  },
+  {
+   "date": "2025-09-04",
+   "who": "Quantinuum (Honeywell)",
+   "what": "Quantinuum raised 600 million dollars at a 10 billion dollar valuation, with NVIDIA's venture arm and Quanta among new investors.",
+   "why": "The highest valuation for a private quantum company at the time; it paid for the Helios launch.",
+   "source": "https://www.honeywell.com/us/en/news/press-releases/2025/09/honeywell-announces-600-million-capital-raise-for-quantinuum-at-10b-pre-money-equity-valuation-to-advance-quantum-computing-at-scale",
+   "source_name": "Honeywell"
+  },
+  {
+   "date": "2025-09-10",
+   "who": "PsiQuantum",
+   "what": "PsiQuantum raised 1 billion dollars at a 7 billion dollar valuation, led by BlackRock with NVIDIA participating, to build data-centre-scale photonic machines in Brisbane and Chicago.",
+   "why": "The largest single private round in the field; it funds the first two purpose-built quantum computing sites.",
+   "source": "https://www.psiquantum.com/news-import/psiquantum-1b-fundraise",
+   "source_name": "PsiQuantum"
+  },
+  {
+   "date": "2025-09-17",
+   "who": "Harvard, MIT and QuEra",
+   "what": "A neutral-atom system of more than 3,000 qubits ran continuously for over two hours, with lost atoms replaced on the fly by conveyor-belt lasers at up to 300,000 atoms a second, published in Nature.",
+   "why": "Atom loss had forced these machines to stop and reload; continuous operation removes that limit on run length.",
+   "source": "https://phys.org/news/2025-09-physicists-quantum-bit-capable.html",
+   "source_name": "Phys.org"
+  },
+  {
+   "date": "2025-09-24",
+   "who": "Caltech",
+   "what": "A Caltech group trapped 6,100 caesium atoms in laser tweezers, held them in superposition for about 13 seconds and controlled single atoms with 99.98 percent accuracy, published in Nature.",
+   "why": "The largest qubit array assembled, and size did not cost quality. The atoms were not yet entangled.",
+   "source": "https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
+   "source_name": "Caltech"
+  },
+  {
+   "date": "2025-09-25",
+   "who": "Alice & Bob",
+   "what": "The company reported its cat qubits resisting bit-flip errors for 33 to 60 minutes, up from about seven minutes in 2024.",
+   "why": "Past the 13 minutes its 2030 machine design needs, and a sign these qubits shrug off cosmic-ray hits.",
+   "source": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+   "source_name": "Alice & Bob"
+  },
+  {
+   "date": "2025-10-07",
+   "who": "Royal Swedish Academy of Sciences",
+   "what": "John Clarke, Michel Devoret and John Martinis won the Nobel Prize in Physics for 1984–85 experiments showing that a superconducting circuit big enough to hold in the hand tunnels and has discrete energy levels like an atom.",
+   "why": "Those experiments are the physical basis of the superconducting qubits used by Google, IBM and others.",
+   "source": "https://www.nobelprize.org/prizes/physics/2025/press-release/",
+   "source_name": "NobelPrize.org"
+  },
+  {
+   "date": "2025-10-21",
+   "who": "IonQ (Oxford Ionics team)",
+   "what": "IonQ reported a two-qubit operation with better than 99.99 percent accuracy on trapped ions using electronic control, without first cooling the ions to their lowest motional state.",
+   "why": "Past the 'four nines' level that error-correction designs assume, and beyond Oxford Ionics' 2024 record of 99.97 percent.",
+   "source": "https://arxiv.org/abs/2510.17286",
+   "source_name": "arXiv"
+  },
+  {
+   "date": "2025-10-22",
+   "who": "Google Quantum AI",
+   "what": "Google's Willow chip ran an algorithm called Quantum Echoes that measures how a disturbance spreads through a quantum system, about 13,000 times faster than the best ordinary method, published in Nature.",
+   "why": "Unlike the earlier random-sampling benchmarks, the answer is a physical quantity another machine can check. Google calls it the first verifiable quantum advantage.",
+   "source": "https://research.google/blog/a-verifiable-quantum-advantage/",
+   "source_name": "Google Research"
+  },
+  {
+   "date": "2025-11-05",
+   "who": "Quantinuum",
+   "what": "Quantinuum launched Helios, a 98-qubit trapped-ion computer with two-qubit accuracy of 99.921 percent and a new programming language, Guppy, and reported a materials simulation it says ordinary methods cannot match.",
+   "why": "The most accurate commercial machine on offer, and the first designed for real-time error correction.",
+   "source": "https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai",
+   "source_name": "Quantinuum"
+  },
+  {
+   "date": "2025-11-06",
+   "who": "DARPA",
+   "what": "DARPA moved 11 companies (Atom Computing, Diraq, IBM, IonQ, Nord Quantique, Photonic, Quantinuum, Quantum Motion, QuEra, Silicon Quantum Computing, Xanadu) to Stage B of its Quantum Benchmarking Initiative, a year-long review of their plans for a useful machine by 2033.",
+   "why": "The first independent government screening of which hardware approaches are credible. Google, Microsoft, PsiQuantum, Rigetti and D-Wave were not on the list.",
+   "source": "https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection",
+   "source_name": "DARPA"
+  },
+  {
+   "date": "2025-11-12",
+   "who": "IBM",
+   "what": "IBM unveiled Nighthawk, a 120-qubit chip with a square grid layout supporting circuits of about 5,000 two-qubit operations, and Loon, a test chip carrying every hardware element its qLDPC error-correction design needs; it also joined an open 'quantum advantage tracker'.",
+   "why": "Nighthawk is the machine IBM expects to show community-verified advantage on by the end of 2026; Loon is the first physical piece of the Starling plan.",
+   "source": "https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance",
+   "source_name": "IBM Newsroom"
+  },
+  {
+   "date": "2025-11-12",
+   "who": "Harvard, MIT and QuEra",
+   "what": "A 448-atom neutral-atom processor combined every ingredient of an error-corrected computer (entangling, logical operations, 'magic' states for universal computing, and error removal) and showed errors falling as the code grew, published in Nature.",
+   "why": "Lead author Dolev Bluvstein called it the first architecture that is 'conceptually scalable'; press reports describe 96 logical qubits on the device.",
+   "source": "https://news.harvard.edu/gazette/story/2025/11/a-potential-quantum-leap/",
+   "source_name": "Harvard Gazette"
+  },
+  {
+   "date": "2026-01-07",
+   "who": "D-Wave",
+   "what": "D-Wave agreed to buy Quantum Circuits Inc., a Yale spin-out building error-corrected superconducting gate-model machines, for about 550 million dollars; the deal closed 20 January 2026.",
+   "why": "The annealing company now has a second hardware line and a gate-model roadmap.",
+   "source": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-completes-acquisition-of-quantum-circuits/",
+   "source_name": "D-Wave"
+  },
+  {
+   "date": "2026-01-26",
+   "who": "IonQ",
+   "what": "IonQ agreed to buy the chip foundry SkyWater Technology for about 1.8 billion dollars in cash and stock; the purchase closed on 31 July 2026 after FTC clearance.",
+   "why": "A quantum company with its own US chip fab, shortening the loop between design and hardware.",
+   "source": "https://www.ionq.com/news/ionq-to-acquire-skywater-technology-creating-the-only-vertically-integrated-full-stack-quantum-platform-company",
+   "source_name": "IonQ"
+  },
+  {
+   "date": "2026-01-27",
+   "who": "University of Chicago, Stanford, MIT, Innsbruck, Delft",
+   "what": "A Science paper led by David Awschalom argued quantum technology has reached the point the transistor reached in the late 1940s: the physics works and the remaining problems are engineering, manufacturing and modular design.",
+   "why": "It framed 2026 as the start of a scaling era rather than a discovery era.",
+   "source": "https://www.sciencedaily.com/releases/2026/01/260127010136.htm",
+   "source_name": "ScienceDaily",
+   "unconfirmed": true,
+   "note": "Exact Science issue date not confirmed."
+  },
+  {
+   "date": "2026-02",
+   "who": "Iceberg Quantum",
+   "what": "A Sydney start-up published an architecture using qLDPC codes that it estimates could break RSA-2048 with fewer than 100,000 physical qubits, about a tenth of Gidney's 2025 figure.",
+   "why": "The resource bar for the quantum threat moved down again, ahead of the hardware.",
+   "source": "https://thequantuminsider.com/2026/03/31/q-day-just-got-closer-three-papers-in-three-months-are-rewriting-the-quantum-threat-timeline/",
+   "source_name": "The Quantum Insider",
+   "unconfirmed": true,
+   "note": "Reported via a secondary summary; the preprint itself was not fetched."
+  },
+  {
+   "date": "2026-02-17",
+   "who": "Infleqtion",
+   "what": "The neutral-atom company Infleqtion listed on the NYSE as INFQ through a merger with Churchill Capital Corp X, receiving over 550 million dollars.",
+   "why": "The first neutral-atom hardware company on a public market.",
+   "source": "https://quantumcomputingreport.com/infleqtion-goes-public-on-nyse-via-spac-merger-raising-550-million/",
+   "source_name": "Quantum Computing Report"
+  },
+  {
+   "date": "2026-03-04",
+   "who": "Pasqal",
+   "what": "Pasqal raised at least 340 million euros and agreed to merge with Bleichroeder Acquisition Corp. II for a Nasdaq listing at a 2 billion dollar valuation.",
+   "why": "Europe's leading neutral-atom company becomes publicly traded, with a Paris listing to follow.",
+   "source": "https://www.pasqal.com/newsroom/pasqal-is-entering-a-new-phase-of-development-with-new-financing-expected-of-at-least-e340-million-in-anticipation-of-its-public-listing/",
+   "source_name": "Pasqal"
+  },
+  {
+   "date": "2026-03-10",
+   "who": "DARPA",
+   "what": "DARPA opened a new Stage A round of the Quantum Benchmarking Initiative for companies not yet in the programme, noting 11 firms in Stage B and two in Stage C; a new director said it 'now seems likely' someone builds a utility-scale machine by 2033.",
+   "why": "The government's assessment shifted from whether to who.",
+   "source": "https://www.darpa.mil/news/2026/qbi-stage-a-qbit",
+   "source_name": "DARPA"
+  },
+  {
+   "date": "2026-03-24",
+   "who": "Google Quantum AI",
+   "what": "Google added a neutral-atom hardware programme, led by Adam Kaufman, alongside its superconducting Willow line, saying the two are complementary: one for deep circuits, the other for large qubit counts.",
+   "why": "The company behind the most-cited superconducting results is now hedging across two hardware families.",
+   "source": "https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/",
+   "source_name": "Google (The Keyword)"
+  },
+  {
+   "date": "2026-03-27",
+   "who": "Xanadu",
+   "what": "The photonic company Xanadu began trading on Nasdaq and the TSX as XNDU after a 3.1 billion dollar SPAC merger, with about 262 million dollars in net proceeds plus Canadian government investment.",
+   "why": "The first publicly listed photonic quantum company.",
+   "source": "https://www.bnnbloomberg.ca/business/2026/03/27/quantum-computing-firm-xanadu-starts-trading-on-tsx/",
+   "source_name": "BNN Bloomberg"
+  },
+  {
+   "date": "2026-04-14",
+   "who": "Pasqal",
+   "what": "Pasqal reported loading 1,024 atoms into a register with no gaps (under 0.5 percent defects), following a 506-atom register in April 2025.",
+   "why": "A full, gap-free array of over 1,000 atoms is the starting condition for running error-correction codes on that many qubits.",
+   "source": "https://www.pasqal.com/blog/defect-free-1024-atom-registers-scaling-to-1000-qubits/",
+   "source_name": "Pasqal"
+  },
+  {
+   "date": "2026-05-13",
+   "who": "University of Science and Technology of China",
+   "what": "Jiuzhang 4.0, a programmable light-based machine, sent 1,024 squeezed light pulses through an 8,176-path circuit and detected up to 3,050 photons in one run, published in Nature; the team says the hardest samples would take a supercomputer over 10^42 years.",
+   "why": "It answers the ordinary-computer methods that had undermined the earlier Jiuzhang results, and is the largest photonic sampling experiment to date.",
+   "source": "https://english.cas.cn/newsroom/headlines/202605/t20260514_1159331.shtml",
+   "source_name": "Chinese Academy of Sciences"
+  },
+  {
+   "date": "2026-05-21",
+   "who": "Flatiron Institute and Boston University",
+   "what": "A new tensor-network method reproduced D-Wave's March 2025 'beyond classical' magnetic simulation on ordinary computers, including a laptop, published in Science.",
+   "why": "It overturns the D-Wave claim. Ordinary methods keep moving the line that quantum hardware has to beat.",
+   "source": "https://www.simonsfoundation.org/2026/05/21/quantum-dynamics-breakthrough-overturns-claim-of-quantum-supremacy-opens-new-research-directions/",
+   "source_name": "Simons Foundation"
+  },
+  {
+   "date": "2026-06-02",
+   "who": "Microsoft",
+   "what": "Microsoft reported Majorana 2, swapping aluminium for lead in its device stack, with a doubled protective energy gap and 'parity lifetimes' over 20 seconds, up from milliseconds, in a company technical paper rather than a peer-reviewed journal.",
+   "why": "A large measured improvement. Critics said it does not answer whether the devices host Majorana states at all.",
+   "source": "https://thequantuminsider.com/2026/06/02/microsoft-reports-advances-in-majorana-2-following-debate-over-last-years-topological-claims/",
+   "source_name": "The Quantum Insider"
+  },
+  {
+   "date": "2026-06-04",
+   "who": "Quantinuum",
+   "what": "Quantinuum listed on Nasdaq as QNT, selling 28 million shares at 60 dollars to raise 1.68 billion dollars; Honeywell kept about 48 percent of the voting power.",
+   "why": "The largest quantum IPO to date, valuing the company at around 14 to 15 billion dollars.",
+   "source": "https://www.cnbc.com/2026/06/04/quantinuum-qnt-stock-first-trade-ipo.html",
+   "source_name": "CNBC"
+  },
+  {
+   "date": "2026-06-23",
+   "who": "US Department of Energy",
+   "what": "DOE announced Quantum Genesis, a plan for a fault-tolerant, scientifically useful quantum computer with 'low hundreds' of logical qubits by 2028, plus a National Quantum Supercomputing User Facility.",
+   "why": "A federal deadline a year ahead of IBM's and Quantinuum's own 2029 targets.",
+   "source": "https://www.energy.gov/science/articles/energy-department-announces-initiative-create-and-deploy-worlds-first",
+   "source_name": "US Department of Energy"
+  },
+  {
+   "date": "2026-06-24",
+   "who": "Henry Legg, University of St Andrews",
+   "what": "Nature published a peer-reviewed 'Matters Arising' challenge finding two coding errors in Microsoft's topological gap protocol, including code that showed only the single most favourable data region; Microsoft called the bugs minor and stood by its results.",
+   "why": "The formal, journal-level version of the dispute that began in 2025. The Majorana claim stays unresolved.",
+   "source": "https://news.st-andrews.ac.uk/archive/critique-published-by-nature-challenges-microsofts-quantum-computing-claims/",
+   "source_name": "University of St Andrews"
+  },
+  {
+   "date": "2026-07-20",
+   "who": "Google Quantum AI",
+   "what": "Google published in Nature a reinforcement-learning system that retunes Willow's control settings during error correction instead of pausing to recalibrate, making logical error rates about 3.5 times more stable and roughly 20 percent lower.",
+   "why": "Keeping an error-corrected machine tuned for days or weeks without a person recalibrating it is a requirement for long computations.",
+   "source": "https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023",
+   "source_name": "The Next Platform"
+  },
+  {
+   "date": "2026-07-31",
+   "who": "IonQ",
+   "what": "IonQ completed its 1.8 billion dollar purchase of SkyWater after US Federal Trade Commission clearance.",
+   "why": "The first quantum company to own its own semiconductor fab.",
+   "source": "https://quantumcomputingreport.com/ionq-clears-final-regulatory-hurdle-to-complete-acquisition-of-skywater-technology/",
+   "source_name": "Quantum Computing Report"
+  },
+  {
+   "date": "2026-09-17",
+   "who": "US Department of Energy",
+   "what": "DOE opened the Quantum Genesis Q Competition: up to 215 million dollars, up to ten teams, a 10-logical-qubit prototype within about a year and a 100-logical-qubit fault-tolerant machine by autumn 2028, with a 100 million dollar pool for finishers.",
+   "why": "The June target became a funded contest with dated deliverables.",
+   "source": "https://www.theregister.com/hpc/2026/09/17/doe-seeking-fault-tolerant-quantum-computer-by-2028/5297311",
+   "source_name": "The Register"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "site": "Quantum Computing, plainly",
+ "url": "https://nanobotco.github.io/quantum-computing/",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "built": "2026-09-22",
+ "counts": {
+  "events": 39,
+  "chapters": 10,
+  "demos": 9,
+  "families": 7,
+  "developments": 46,
+  "terms": 35,
+  "sources": 107
+ },
+ "files": [
+  "timeline.json",
+  "theory.json",
+  "machines.json",
+  "developments.json",
+  "recent.json",
+  "glossary.json"
+ ]
+}

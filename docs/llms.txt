@@ -1,0 +1,56 @@
+# Quantum Computing, plainly
+
+> The history and theory of quantum computing in plain words, with animated demos, the hardware families compared, and a dated ledger of developments since 2025 that is refreshed weekly. CC BY 4.0.
+
+- [History](https://nanobotco.github.io/quantum-computing/history/): 39 events, 1900 to 2024, each with a source
+- [Theory](https://nanobotco.github.io/quantum-computing/theory/): 10 chapters
+- [A coin on the table, a coin in the air](https://nanobotco.github.io/quantum-computing/theory/bit/): A bit is a coin lying on the table: heads or tails. A qubit is a coin in the air.
+- [Where the arrow points](https://nanobotco.github.io/quantum-computing/theory/sphere/): One qubit is an arrow that can point anywhere on a ball. Up is 0, down is 1, and the sideways part is what makes it quantum.
+- [Ripples that cancel](https://nanobotco.github.io/quantum-computing/theory/waves/): Drop two stones in a pond. Where crest meets crest the water leaps; where crest meets trough it goes flat. A quantum computer is arranged so wrong answers meet trough and go flat.
+- [Two coins that always match](https://nanobotco.github.io/quantum-computing/theory/entangle/): Two entangled qubits are two coins in the air that, when you catch them, always land the same way, no matter how far apart, and neither one had picked before you looked.
+- [The switches](https://nanobotco.github.io/quantum-computing/theory/gates/): A quantum program is a short list of turns applied to qubits, drawn as wires and boxes. Everything the machine does is a few kinds of turn, over and over.
+- [Finding a needle in fewer tries](https://nanobotco.github.io/quantum-computing/theory/grover/): Grover's method finds one marked item in a million by looking about a thousand times. An ordinary computer looks half a million. The trick is amplifying the right answer's wave a little with every pass.
+- [Breaking the locks](https://nanobotco.github.io/quantum-computing/theory/shor/): The locks on the internet rest on one fact: multiplying two big primes is easy, and undoing it is not. Shor showed a quantum computer can undo it, by finding a rhythm.
+- [Why it falls apart](https://nanobotco.github.io/quantum-computing/theory/noise/): A qubit in the air is a coin balanced on its edge in a barn full of drafts. Anything that touches it, heat, a stray radio wave, a cosmic ray, counts as a look, and the coin falls.
+- [Fixing errors without looking](https://nanobotco.github.io/quantum-computing/theory/correct/): You cannot copy a qubit and you cannot look at it. So you spread it across many qubits and ask the neighbours whether they still agree, without asking what they say.
+- [What it is not](https://nanobotco.github.io/quantum-computing/theory/myths/): It does not try every answer at once, it is not faster at everything, and it is not about to replace your laptop.
+- [Machines](https://nanobotco.github.io/quantum-computing/machines/): 7 hardware families, biggest machine and best figure per family, dated
+- [Now](https://nanobotco.github.io/quantum-computing/now/): 46 developments since 2025-01, newest 2026-09-17; weekly arXiv and news feed
+- [Words](https://nanobotco.github.io/quantum-computing/words/): 35 terms
+- [Sources](https://nanobotco.github.io/quantum-computing/sources/): 107 sources
+
+## Data
+- https://nanobotco.github.io/quantum-computing/api/timeline.json · https://nanobotco.github.io/quantum-computing/api/theory.json · https://nanobotco.github.io/quantum-computing/api/machines.json · https://nanobotco.github.io/quantum-computing/api/developments.json · https://nanobotco.github.io/quantum-computing/api/recent.json · https://nanobotco.github.io/quantum-computing/api/glossary.json
+- https://nanobotco.github.io/quantum-computing/llms-full.txt — every chapter, event and development as text
+- Repository: https://github.com/NaNoBotCo/quantum-computing
+
+# — roster of sibling sites, generated from data/fleet.json —
+## Elsewhere from the same publisher
+
+Made by Hongdam (https://hongdam.net/), a bilingual web studio in Chiang Rai.
+
+- [Mot Dang](https://motdang.net/): city directory for Chiang Mai and Chiang Rai
+- [The Mae Hong Son Loop](https://nanobotco.github.io/mae-hong-son-loop/): motorcycling the 600 km loop out of Chiang Mai — curves counted, air measured
+- [Muay Thai](https://motdang.net/muay-thai/): the eight limbs, the thirty named techniques, the ceremony, and every gym on the map
+- [Roads of Chiang Mai](https://motdang.net/roads/): the square of 1296, four rings, and what each one did to the city — counted from the map
+- [wichaa](https://wichaa.net/): Lanna manuscripts, the amulet market, and the traditions around them
+- [Hand Poke](https://nanobotco.github.io/hand-poke/): 28 traditions of marking skin by hand — the leg-tattoo zone of Burma, the Shan States and Lanna, counted
+- [Amulet Atlas](https://nanobotco.github.io/amulet-atlas/): amulets, charms and talismans worldwide
+- [Carolina Barbecue](https://nanobotco.github.io/carolina-barbecue/): barbecue in North and South Carolina
+- [Wing Country](https://nanobotco.github.io/buffalo-wings/): the American chicken wing
+- [Pink Box](https://nanobotco.github.io/pink-box/): the American mom-and-pop donut shop
+- [Basque Tables](https://nanobotco.github.io/basque-tables/): Basque dining rooms of California, Nevada and Idaho
+- [Pinot Country](https://nanobotco.github.io/pinot-noir/): pinot noir: the vine, the regions, the cellars
+- [Care Abroad](https://nanobotco.github.io/care-abroad/): treatment across borders, with published prices and their dates
+- [Thai Roots](https://nanobotco.github.io/thairoots/): a root dictionary of Thai, with a word decomposer
+- [The index](https://nanobotco.github.io/index/): every corpus, site and repository, counted
+- [Uptake](https://nanobotco.github.io/uptake/): a field manual on publishing for machines that copy
+- [NaNoBotCo](https://nanobotco.github.io/): the portal
+- [Ask Mot Dang](https://ask.motdang.net/): reader assistant over the directory
+- [ai.motdang.net](https://ai.motdang.net/): white-label assistants, by seat
+- [Defiant](https://defiant.to/): medical and dental care in Chiang Mai, with a translator at the appointment
+- [Hongdam](https://hongdam.net/): bilingual web development, Chiang Rai
+- [ฮักฝรั่ง](https://hakfarang.net/): เรื่องเงิน วีซ่า และชีวิตกับแฟนฝรั่ง
+- [Offrampt](https://offrampt.net/): turning crypto into spendable local money, Thailand first
+
+- [The roster as JSON](https://nanobotco.github.io/index/fleet.json)

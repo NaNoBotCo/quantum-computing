@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finding a needle in fewer tries — Quantum Computing</title>
+<meta name="description" content="Grover&#x27;s method finds one marked item in a million by looking about a thousand times. An ordinary computer looks half a million. The trick is amplifying the right answer&#x27;s wave a little with every pass.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="color-scheme" content="light dark">
+<meta property="og:site_name" content="Quantum Computing, plainly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Finding a needle in fewer tries — Quantum Computing"><meta property="og:description" content="Grover&#x27;s method finds one marked item in a million by looking about a thousand times. An ordinary computer looks half a million. The trick is amplifying the right answer&#x27;s wave a little with every pas"><meta property="og:type" content="website">
+<meta property="og:image" content="https://nanobotco.github.io/quantum-computing/img/card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nanobotco.github.io/quantum-computing/img/card.jpg">
+<link rel="canonical" href="https://nanobotco.github.io/quantum-computing/theory/grover/">
+<link rel="icon" href="../../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<meta name="theme-color" content="#0b7a76">
+<link rel="alternate" type="application/atom+xml" title="Quantum Computing, plainly — recent developments" href="../../feed.xml">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<style>
+:root{
+ --bg:#f7f6f1;--panel:#ffffff;--ink:#101418;--mute:#5b6570;--line:#e2e0d6;--chip:#eceae0;
+ --teal:#0b7a76;--gold:#b7791f;--violet:#6d4fc4;--red:#c8323c;--navy:#0b1220;
+ --focus:#0a4fd1;--shadow:rgba(10,14,20,.10);
+ --e-quantum:#6d4fc4;--e-computing:#5b6570;--e-idea:#0b7a76;--e-build:#b7791f;--e-correct:#c8323c;--e-now:#0a66c2;
+ --display:"Avenir Next Condensed","HelveticaNeue-CondensedBold","Arial Narrow Bold",
+   "Franklin Gothic Heavy",Impact,system-ui,sans-serif;
+ --body:"Avenir Next",Avenir,"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0d1117;--panel:#151b24;--ink:#eef1f4;--mute:#a4afbb;--line:#26303c;--chip:#1c2530;
+ --teal:#2fc4bd;--gold:#f0b545;--violet:#a891f2;--red:#ff6b74;--navy:#070b13;
+ --focus:#8ab4f8;--shadow:rgba(0,0,0,.5);
+ --e-quantum:#a891f2;--e-computing:#a4afbb;--e-idea:#2fc4bd;--e-build:#f0b545;--e-correct:#ff6b74;--e-now:#6cb4ff;}}
+:root[data-theme="dark"]{
+ --bg:#0d1117;--panel:#151b24;--ink:#eef1f4;--mute:#a4afbb;--line:#26303c;--chip:#1c2530;
+ --teal:#2fc4bd;--gold:#f0b545;--violet:#a891f2;--red:#ff6b74;--navy:#070b13;
+ --focus:#8ab4f8;--shadow:rgba(0,0,0,.5);
+ --e-quantum:#a891f2;--e-computing:#a4afbb;--e-idea:#2fc4bd;--e-build:#f0b545;--e-correct:#ff6b74;--e-now:#6cb4ff;}
+*{box-sizing:border-box}
+html{font-size:19px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.62;-webkit-text-size-adjust:100%}
+a{color:var(--teal);text-decoration-thickness:.08em;text-underline-offset:.18em}
+a:hover{color:var(--violet)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:5px}
+img,svg{max-width:100%}
+main{max-width:46rem;margin:0 auto;padding:0 1rem 3rem}
+main.wide{max-width:64rem}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.005em;margin:1.6rem 0 .5rem}
+h1{font-size:clamp(2.2rem,7vw,4rem);margin-top:1.2rem}
+h2{font-size:clamp(1.6rem,4.5vw,2.4rem);border-bottom:3px solid var(--ink);padding-bottom:.2rem}
+h3{font-size:1.3rem}
+p{margin:.6rem 0}
+.lead{font-size:1.25rem;line-height:1.5;max-width:36ch}
+.line{font-size:1.2rem;font-weight:600;border-left:5px solid var(--gold);padding:.3rem 0 .3rem .9rem;margin:1rem 0 1.2rem;background:var(--chip)}
+.mute{color:var(--mute)}
+.small{font-size:.86rem}
+code,.mono{font-family:var(--mono);font-size:.9em}
+hr{border:0;border-top:1px solid var(--line);margin:2rem 0}
+/* header */
+header.top{max-width:64rem;margin:0 auto;padding:.7rem 1rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.2rem}
+.brand{font-family:var(--display);font-size:1.5rem;text-decoration:none;color:var(--ink);letter-spacing:.01em}
+.brand b{color:var(--teal)}
+nav.crumbs{font-size:.92rem;display:flex;flex-wrap:wrap;gap:.2rem .9rem}
+nav.crumbs a{text-decoration:none;color:var(--ink);border-bottom:2px solid transparent;padding-bottom:.1rem}
+nav.crumbs a:hover,nav.crumbs a[aria-current]{border-bottom-color:var(--gold);color:var(--ink)}
+/* the linked picture: background · scrim · spacer · text — the whole box is the link */
+.shot{position:relative;display:block;overflow:hidden;text-decoration:none;border:3px solid var(--ink);color:#fff;isolation:isolate;background:var(--navy)}
+.shot .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.shot .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,8,14,.05) 0%,rgba(6,8,14,.25) 45%,rgba(6,8,14,.86) 100%)}
+.shot .sp{display:block;padding-top:62%}
+.shot .tx{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:.7rem .9rem;font-family:var(--display);font-size:clamp(1.3rem,3.2vw,1.9rem);line-height:1.02;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.shot .tx small{display:block;font-family:var(--body);font-size:.78rem;opacity:.9;margin-top:.3rem;font-weight:400}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin:1.4rem 0}
+.doors h3{margin:0}
+.hero{margin:1rem 0 0}
+.hero .sp{padding-top:44%}
+.hero .tx{font-size:clamp(2rem,7vw,4.4rem);padding:1rem 1.2rem}
+.hero .tx small{font-size:clamp(.95rem,2vw,1.15rem);max-width:40ch}
+/* the parallax band — full bleed, the photograph held still while the page moves over it */
+.band{position:relative;isolation:isolate;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;
+ min-height:clamp(220px,44vh,440px);display:grid;align-items:center;background-size:cover;background-position:center;
+ background-repeat:no-repeat;background-attachment:fixed;background-color:var(--navy);
+ border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);margin-block:2.4rem;color:#fff}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,8,14,.72) 0%,rgba(6,8,14,.30) 40%,rgba(6,8,14,.40) 60%,rgba(6,8,14,.82) 100%)}
+.band .in{max-width:46rem;margin:0 auto;padding:clamp(1.6rem,5vw,3.4rem) 1rem;width:100%}
+.band .kicker{display:block;font-family:var(--display);font-size:.72rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:#f0b545;margin-bottom:.5rem}
+.band h2{border:0;color:#fff;text-transform:uppercase;margin:0 0 .4rem;max-width:22ch;text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.band p{color:#e8ecf0;max-width:38ch;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+.band .big{font-family:var(--display);font-size:clamp(3rem,11vw,7rem);line-height:.86;font-weight:800;color:#fff;margin:0}
+.band .big small{display:block;font-family:var(--body);font-size:.16em;letter-spacing:.2em;text-transform:uppercase;font-weight:800;margin-top:.5rem;color:#f0b545}
+@media (pointer:coarse),(prefers-reduced-motion:reduce){.band{background-attachment:scroll}}
+/* chapters */
+.chapter{margin:2.2rem 0}
+.chapter .body p{max-width:64ch}
+.try{background:var(--chip);border-left:5px solid var(--teal);padding:.5rem .9rem;margin:.8rem 0;font-size:.95rem}
+.try b{color:var(--teal)}
+.demo{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem;margin:1.2rem 0;box-shadow:0 10px 30px var(--shadow)}
+.demo .row{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin:.5rem 0}
+.demo label{font-size:.88rem;color:var(--mute);display:flex;align-items:center;gap:.4rem}
+.demo input[type=range]{accent-color:var(--teal);width:9rem}
+.demo .readout{font-family:var(--mono);font-size:.9rem;background:var(--chip);padding:.15rem .5rem;border-radius:6px}
+.demo svg{display:block;width:100%;height:auto}
+.demo canvas{display:block;width:100%;height:auto;border-radius:8px;background:#070b13}
+.btn{display:inline-block;font:inherit;font-weight:700;font-size:.92rem;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:.45rem 1rem;cursor:pointer;text-decoration:none}
+.btn.alt{background:var(--chip);color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+.tally{display:grid;grid-template-columns:auto 1fr auto;gap:.3rem .6rem;align-items:center;font-size:.9rem;margin:.5rem 0}
+.tally .bar{height:.7rem;background:var(--line);border-radius:4px;overflow:hidden}
+.tally .bar i{display:block;height:100%;background:var(--teal);transform-origin:left;transform:scaleX(var(--v,0))}
+.tally .bar.t i{background:var(--gold)}
+.note{font-size:.86rem;color:var(--mute);margin:.4rem 0 0}
+/* timeline */
+.tl{list-style:none;margin:1.5rem 0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:5.2rem;top:0;bottom:0;width:3px;background:var(--line)}
+.tl li{position:relative;display:grid;grid-template-columns:4.2rem 1fr;gap:1.4rem;margin:0 0 1.6rem}
+.tl .yr{font-family:var(--display);font-size:1.6rem;line-height:1;text-align:right;color:var(--mute);padding-top:.15rem}
+.tl .dot{position:absolute;left:calc(5.2rem - 8px);top:.45rem;width:19px;height:19px;border-radius:50%;background:var(--e,var(--teal));border:3px solid var(--bg);box-shadow:0 0 0 2px var(--e,var(--teal))}
+.tl h3{margin:0 0 .2rem;font-size:1.35rem}
+.tl .plain{margin:.1rem 0 .3rem;font-size:1.02rem}
+.tl details{font-size:.95rem}
+.tl summary{cursor:pointer;color:var(--teal);font-size:.9rem}
+.tl .who{font-size:.82rem;color:var(--mute)}
+.tl .era{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--e,var(--teal));margin-right:.5rem}
+@media (max-width:540px){.tl::before{left:.55rem}.tl li{grid-template-columns:1fr;gap:.2rem;padding-left:1.6rem}.tl .yr{text-align:left}.tl .dot{left:calc(.55rem - 8px)}}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem .9rem;font-size:.82rem;margin:.6rem 0}
+.legend span::before{content:"";display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--e);margin-right:.35em;vertical-align:-.05em}
+/* cards, lists */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1rem;margin:1rem 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;box-shadow:0 6px 18px var(--shadow)}
+.card h3{margin:.2rem 0 .3rem}
+.card .kv{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.86rem;margin:.6rem 0}
+.card .kv b{color:var(--mute);font-weight:600}
+.card .who{font-size:.84rem;color:var(--mute)}
+.pro,.con{font-size:.94rem;margin:.4rem 0;padding-left:1.2rem;position:relative}
+.pro::before{content:"+";position:absolute;left:0;color:var(--teal);font-weight:800}
+.con::before{content:"−";position:absolute;left:0;color:var(--red);font-weight:800}
+dl.gloss{margin:1rem 0}
+dl.gloss dt{font-weight:700;margin-top:.8rem}
+dl.gloss dd{margin:0 0 0 0;color:var(--ink)}
+dl.gloss dd a{font-size:.84rem}
+.ledger{list-style:none;margin:1rem 0;padding:0}
+.ledger li{display:grid;grid-template-columns:6.2rem 1fr;gap:.2rem 1rem;padding:.8rem 0;border-top:1px solid var(--line)}
+.ledger .d{font-family:var(--mono);font-size:.84rem;color:var(--mute);padding-top:.25rem}
+.ledger .w{font-weight:700}
+.ledger .why{font-size:.92rem;color:var(--mute)}
+.ledger .src{font-size:.82rem}
+.ledger .unc{font-size:.78rem;color:var(--gold);font-weight:700}
+@media (max-width:540px){.ledger li{grid-template-columns:1fr}}
+.feed{list-style:none;margin:.6rem 0;padding:0;font-size:.92rem}
+.feed li{padding:.45rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:5.6rem 1fr;gap:.6rem}
+.feed .d{font-family:var(--mono);font-size:.8rem;color:var(--mute)}
+.feed .s{color:var(--mute);font-size:.82rem}
+@media (max-width:540px){.feed li{grid-template-columns:1fr}}
+.chart{margin:1.2rem 0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.8rem}
+.chart svg text{font-family:var(--body);fill:var(--ink)}
+.chart .cap{font-size:.84rem;color:var(--mute);margin:.4rem .2rem 0}
+.myth p{max-width:64ch}
+.myth strong{color:var(--red)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin:1rem 0}
+th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.wrap{overflow-x:auto}
+footer{max-width:64rem;margin:2rem auto 0;padding:1.4rem 1rem 3rem;border-top:3px solid var(--ink);font-size:.86rem;color:var(--mute)}
+footer a{color:var(--mute)}
+.fleet{margin:.6rem 0 0;line-height:1.9}.fleet a{margin-right:.55rem;white-space:nowrap}
+.support{margin:.45rem 0 0}.support a{margin-right:.5rem}
+.bots a{margin-right:.5rem}
+.share{margin:2rem 0 0;font-size:.86rem;color:var(--mute)}
+/* motion — transform and opacity only, behind the gate */
+@media (prefers-reduced-motion:no-preference){
+ .shot .bg{transition:transform .6s ease}.shot:hover .bg{transform:scale(1.04)}
+ .shot,.card{transition:transform .18s ease,box-shadow .18s ease}
+ .shot:hover,.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px var(--shadow)}
+ .btn{transition:transform .15s ease}.btn:hover{transform:scale(1.05)}.btn:active{transform:scale(.97)}
+ .tl li{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+ .tl li.in,.tl.nojs li{opacity:1;transform:none}
+ .tally .bar i{transition:transform .35s ease}
+ .demo::before{content:"";position:absolute;inset:-2px;border-radius:16px;z-index:-1;
+  background:conic-gradient(from var(--a,0deg),var(--teal),var(--violet),var(--gold),var(--teal));
+  animation:spin 9s linear infinite;opacity:.55}
+ @property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+ @keyframes spin{to{--a:360deg}}
+ .coin.air{animation:flip 1.1s linear infinite}
+ @keyframes flip{0%{transform:scaleX(1)}50%{transform:scaleX(.08)}100%{transform:scaleX(1)}}
+ .pulse{animation:pulse 1.6s ease-in-out infinite}
+ @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+ .spinarrow{transform-origin:center;animation:turn 6s linear infinite}
+ @keyframes turn{to{transform:rotate(360deg)}}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Finding a needle in fewer tries", "description": "Grover's method finds one marked item in a million by looking about a thousand times. An ordinary computer looks half a million. The trick is amplifying the right answer's wave a little with every pass.", "url": "https://nanobotco.github.io/quantum-computing/theory/grover/", "license": "https://creativecommons.org/licenses/by/4.0/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Quantum Computing, plainly", "url": "https://nanobotco.github.io/quantum-computing/"}, "publisher": {"@type": "Organization", "name": "NaNoBotCo", "url": "https://nanobotco.github.io/index/", "email": "nan@motdang.net", "sameAs": ["https://motdang.net/", "https://nanobotco.github.io/mae-hong-son-loop/", "https://motdang.net/muay-thai/", "https://motdang.net/roads/", "https://wichaa.net/", "https://nanobotco.github.io/hand-poke/", "https://nanobotco.github.io/quantum-computing/", "https://nanobotco.github.io/amulet-atlas/", "https://nanobotco.github.io/carolina-barbecue/", "https://nanobotco.github.io/buffalo-wings/", "https://nanobotco.github.io/pink-box/", "https://nanobotco.github.io/basque-tables/", "https://nanobotco.github.io/pinot-noir/", "https://nanobotco.github.io/care-abroad/", "https://nanobotco.github.io/thairoots/", "https://nanobotco.github.io/index/", "https://nanobotco.github.io/uptake/", "https://nanobotco.github.io/", "https://ask.motdang.net/", "https://ai.motdang.net/", "https://defiant.to/", "https://hongdam.net/", "https://hakfarang.net/", "https://offrampt.net/"]}, "dateModified": "2026-09-22"}</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../../index.html">Quantum <b>Computing</b></a>
+<nav class="crumbs"><a href="../../index.html">Home</a> · <a href="../../history/index.html">History</a> · <a href="../../theory/index.html" aria-current=page>Theory</a> · <a href="../../machines/index.html">Machines</a> · <a href="../../now/index.html">Now</a> · <a href="../../words/index.html">Words</a> · <a href="../../sources/index.html">Sources</a> · <a href="../../llms.txt">llms.txt</a> · <a href="https://github.com/NaNoBotCo/quantum-computing">Source</a></nav></header>
+<main>
+
+<p class="small mute">Theory · chapter 6 of 10</p>
+<h1>Finding a needle in fewer tries</h1>
+<p class="line">Grover&#x27;s method finds one marked item in a million by looking about a thousand times. An ordinary computer looks half a million. The trick is amplifying the right answer&#x27;s wave a little with every pass.</p>
+<div class="chapter"><div class="body"><p>Suppose one name in a phone book of a million has a star next to it and you can only check one name at a time. On average you check half a million. There is no shortcut for an ordinary computer.</p><p>Grover&#x27;s method starts by putting all million names in superposition, each with the same small amplitude. Then it does two things, over and over. First, it flips the sign of the starred name&#x27;s amplitude, crest to trough. Second, it reflects every amplitude about the average. The starred one, being the odd one out, gets pushed up; the rest get pushed down by a hair.</p><p>Each round the starred amplitude grows. After about a thousand rounds, the square root of a million, it is nearly all the wave, and a measurement reads it out. Go too many rounds and it starts shrinking again, so you have to count.</p><p>That is a square-root speed-up. A million to a thousand is good. A trillion to a million is better. It is not the exponential leap of Shor&#x27;s method, but it applies to almost any search or optimisation you can phrase as &#x27;check whether this guess is right&#x27;, which is why it comes up so much.</p><p>It has also been proved you cannot do better than the square root for a plain unsorted search. The quantum computer is not magic here. It is a wave doing what a wave can do.</p></div></div>
+<div class="try"><b>Try it.</b> Sixteen boxes, one marked. Press Step. Watch the marked bar grow and the rest shrink. It takes three steps. Keep pressing past the peak and watch it fall away again.</div>
+<div class="demo" data-demo="grover"><p class="mute small">This demo runs in the browser with JavaScript on. The words above stand on their own.</p></div>
+
+<h3>Sources</h3><ul class='small'><li><a href="https://en.wikipedia.org/wiki/Grover%27s_algorithm">Grover&#x27;s algorithm</a></li><li><a href="https://arxiv.org/abs/quant-ph/9605043">Grover, 1996, arXiv:quant-ph/9605043</a></li></ul>
+<p class="row"><a class="btn alt" href="../gates/index.html">← The switches</a> <a class="btn" href="../shor/index.html">Breaking the locks →</a></p>
+
+</main>
+<footer>
+<div class="bots">For the machines: <a href="../../api/timeline.json">timeline.json</a> <a href="../../api/theory.json">theory.json</a> <a href="../../api/machines.json">machines.json</a> <a href="../../api/developments.json">developments.json</a> <a href="../../api/recent.json">recent.json</a> <a href="../../api/glossary.json">glossary.json</a> <a href="../../llms-full.txt">llms-full.txt</a> <a href="../../sitemap.xml">sitemap.xml</a> <a href="../../feed.xml">feed.xml</a></div>
+<p>Text, data and pictures <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code <a href="https://github.com/NaNoBotCo/quantum-computing/blob/main/LICENSE">MIT</a>. Every picture here is computed from an equation in <a href="https://github.com/NaNoBotCo/quantum-computing/blob/main/tools/draw.py">tools/draw.py</a>. Sources sit beside the facts they support and are listed at <a href="../../sources/index.html">Sources</a>. Built 2026-09-22.</p>
+<div class="fleet">More from NaNoBotCo: <a href="https://motdang.net/" title="city directory for Chiang Mai and Chiang Rai">Mot Dang</a> · <a href="https://nanobotco.github.io/mae-hong-son-loop/" title="motorcycling the 600 km loop out of Chiang Mai — curves counted, air measured">The Mae Hong Son Loop</a> · <a href="https://motdang.net/muay-thai/" title="the eight limbs, the thirty named techniques, the ceremony, and every gym on the map">Muay Thai</a> · <a href="https://motdang.net/roads/" title="the square of 1296, four rings, and what each one did to the city — counted from the map">Roads of Chiang Mai</a> · <a href="https://wichaa.net/" title="Lanna manuscripts, the amulet market, and the traditions around them">wichaa</a> · <a href="https://nanobotco.github.io/hand-poke/" title="28 traditions of marking skin by hand — the leg-tattoo zone of Burma, the Shan States and Lanna, counted">Hand Poke</a> · <a href="https://nanobotco.github.io/amulet-atlas/" title="amulets, charms and talismans worldwide">Amulet Atlas</a> · <a href="https://nanobotco.github.io/carolina-barbecue/" title="barbecue in North and South Carolina">Carolina Barbecue</a> · <a href="https://nanobotco.github.io/buffalo-wings/" title="the American chicken wing">Wing Country</a> · <a href="https://nanobotco.github.io/pink-box/" title="the American mom-and-pop donut shop">Pink Box</a> · <a href="https://nanobotco.github.io/basque-tables/" title="Basque dining rooms of California, Nevada and Idaho">Basque Tables</a> · <a href="https://nanobotco.github.io/pinot-noir/" title="pinot noir: the vine, the regions, the cellars">Pinot Country</a> · <a href="https://nanobotco.github.io/care-abroad/" title="treatment across borders, with published prices and their dates">Care Abroad</a> · <a href="https://nanobotco.github.io/thairoots/" title="a root dictionary of Thai, with a word decomposer">Thai Roots</a> · <a href="https://nanobotco.github.io/index/" title="every corpus, site and repository, counted">The index</a> · <a href="https://nanobotco.github.io/uptake/" title="a field manual on publishing for machines that copy">Uptake</a> · <a href="https://nanobotco.github.io/" title="the portal">NaNoBotCo</a> · <a href="https://hakfarang.net/" title="เรื่องเงิน วีซ่า และชีวิตกับแฟนฝรั่ง">ฮักฝรั่ง</a> · <a href="https://offrampt.net/" title="turning crypto into spendable local money, Thailand first">Offrampt</a></div>
+<div class="support">Contact: Nan · <a href="mailto:nan@motdang.net">nan@motdang.net</a> · Sponsor: <a href="https://www.patreon.com/nanobotco" rel="noopener" target="_blank">Patreon</a> · <a href="https://ko-fi.com/defiantchiangmai" rel="noopener" target="_blank">Ko-fi</a></div>
+<div class="support maker">Made by <a href="https://hongdam.net/" rel="noopener">Hongdam</a>, Chiang Rai.</div>
+</footer>
+<script>/* anim.js — the demos. Vanilla, no library, inlined into the theory pages.
+   Each demo mounts into an element with data-demo="<name>". Continuous motion runs
+   only when the reader has not asked for reduced motion; everything is also driven by
+   buttons, so a still page is a working page. */
+(function () {
+  "use strict";
+  var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag);
+    if (attrs) for (var k in attrs) { if (k === "text") e.textContent = attrs[k]; else if (k === "html") e.innerHTML = attrs[k]; else e.setAttribute(k, attrs[k]); }
+    (kids || []).forEach(function (c) { e.appendChild(c); });
+    return e;
+  }
+  function svg(tag, attrs) { var e = document.createElementNS(NS, tag); if (attrs) for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function btn(label, cls) { return el("button", { class: "btn" + (cls ? " " + cls : ""), type: "button", text: label }); }
+  function range(min, max, val, step) { return el("input", { type: "range", min: min, max: max, value: val, step: step || 1 }); }
+  function readout(t) { return el("span", { class: "readout", text: t }); }
+  function fmt(x, d) { return (Math.round(x * Math.pow(10, d)) / Math.pow(10, d)).toFixed(d); }
+  var css = getComputedStyle(document.documentElement);
+  var C = { teal: css.getPropertyValue("--teal").trim() || "#0b7a76", gold: css.getPropertyValue("--gold").trim() || "#b7791f",
+            violet: css.getPropertyValue("--violet").trim() || "#6d4fc4", red: css.getPropertyValue("--red").trim() || "#c8323c",
+            ink: css.getPropertyValue("--ink").trim() || "#101418", mute: css.getPropertyValue("--mute").trim() || "#5b6570",
+            line: css.getPropertyValue("--line").trim() || "#e2e0d6" };
+
+  /* ---------------------------------------------------------------- 1  the coin */
+  function coin(root) {
+    var p = 0.5, heads = 0, tails = 0, landed = null;
+    var s = svg("svg", { viewBox: "0 0 320 160", role: "img", "aria-label": "a coin, spinning until measured" });
+    var g = svg("g", { transform: "translate(80 80)" });
+    var disc = svg("circle", { r: 54, fill: C.gold, stroke: C.ink, "stroke-width": 3 });
+    var face = svg("text", { "text-anchor": "middle", y: 16, "font-size": 44, "font-weight": 800, fill: C.ink, "font-family": "inherit" });
+    face.textContent = "?";
+    g.appendChild(disc); g.appendChild(face); g.setAttribute("class", "coin air"); s.appendChild(g);
+    var lab = svg("text", { x: 170, y: 60, "font-size": 15, fill: C.mute, "font-family": "inherit" }); lab.textContent = "in the air"; s.appendChild(lab);
+    var odds = svg("text", { x: 170, y: 90, "font-size": 15, fill: C.ink, "font-family": "inherit" }); s.appendChild(odds);
+    var measure = btn("Measure"), reset = btn("Reset", "alt"), many = btn("Measure ×100", "alt");
+    var lean = range(0, 100, 50); var leanOut = readout("");
+    var tally = el("div", { class: "tally" });
+    var hb = el("i"), tb = el("i");
+    tally.appendChild(el("span", { text: "0 (heads)" })); tally.appendChild(el("div", { class: "bar" }, [hb])); var hn = el("span", { text: "0" }); tally.appendChild(hn);
+    tally.appendChild(el("span", { text: "1 (tails)" })); tally.appendChild(el("div", { class: "bar t" }, [tb])); var tn = el("span", { text: "0" }); tally.appendChild(tn);
+    function draw() {
+      odds.textContent = "lean: " + Math.round(p * 100) + "% toward 0";
+      leanOut.textContent = Math.round(p * 100) + "% / " + Math.round((1 - p) * 100) + "%";
+      var n = heads + tails || 1;
+      hb.style.setProperty("--v", heads / n); tb.style.setProperty("--v", tails / n);
+      hn.textContent = heads + (n > 1 ? " (" + Math.round(100 * heads / n) + "%)" : ""); tn.textContent = tails + (n > 1 ? " (" + Math.round(100 * tails / n) + "%)" : "");
+      if (landed === null) { g.setAttribute("class", RM ? "coin" : "coin air"); face.textContent = "?"; lab.textContent = RM ? "in the air (spin not shown)" : "in the air"; disc.setAttribute("fill", C.gold); }
+      else { g.setAttribute("class", "coin"); face.textContent = landed; lab.textContent = "measured: it is " + landed + " now"; disc.setAttribute("fill", landed === "0" ? C.teal : C.violet); }
+    }
+    function once() { var r = Math.random() < p ? "0" : "1"; if (r === "0") heads++; else tails++; return r; }
+    measure.onclick = function () { if (landed !== null) return; landed = once(); draw(); };
+    many.onclick = function () { for (var i = 0; i < 100; i++) once(); landed = null; draw(); };
+    reset.onclick = function () { landed = null; draw(); };
+    lean.oninput = function () { p = lean.value / 100; landed = null; draw(); };
+    root.appendChild(s);
+    root.appendChild(el("div", { class: "row" }, [measure, reset, many]));
+    root.appendChild(el("div", { class: "row" }, [el("label", { text: "lean toward 0" }, [lean]), leanOut]));
+    root.appendChild(tally);
+    root.appendChild(el("p", { class: "note", text: "The lean sets the odds. A measured coin stays put until you reset it; there is no second look at the same superposition." }));
+    draw();
+  }
+
+  /* ---------------------------------------------------------------- 2  the Bloch sphere */
+  function blochSvg(size) {
+    var s = svg("svg", { viewBox: "0 0 200 200", width: size || 260, role: "img", "aria-label": "Bloch sphere" });
+    s.appendChild(svg("circle", { cx: 100, cy: 100, r: 86, fill: "none", stroke: C.mute, "stroke-width": 1.5 }));
+    s.appendChild(svg("ellipse", { cx: 100, cy: 100, rx: 86, ry: 26, fill: "none", stroke: C.mute, "stroke-width": 1, "stroke-dasharray": "3 3" }));
+    s.appendChild(svg("line", { x1: 100, y1: 14, x2: 100, y2: 186, stroke: C.mute, "stroke-width": 1, "stroke-dasharray": "3 3" }));
+    var t0 = svg("text", { x: 100, y: 10, "text-anchor": "middle", "font-size": 11, fill: C.ink, "font-family": "inherit" }); t0.textContent = "0"; s.appendChild(t0);
+    var t1 = svg("text", { x: 100, y: 198, "text-anchor": "middle", "font-size": 11, fill: C.ink, "font-family": "inherit" }); t1.textContent = "1"; s.appendChild(t1);
+    var shaft = svg("line", { x1: 100, y1: 100, x2: 100, y2: 14, stroke: C.gold, "stroke-width": 4, "stroke-linecap": "round" });
+    var tip = svg("circle", { cx: 100, cy: 14, r: 7, fill: C.gold, stroke: C.ink, "stroke-width": 2 });
+    var shadow = svg("ellipse", { cx: 100, cy: 100, rx: 0, ry: 0, fill: C.gold, opacity: .25 });
+    s.appendChild(shadow); s.appendChild(shaft); s.appendChild(tip);
+    s.set = function (theta, phi, len) {
+      len = len === undefined ? 1 : len;
+      var x = Math.sin(theta) * Math.cos(phi), y = Math.sin(theta) * Math.sin(phi), z = Math.cos(theta);
+      var px = 100 + 86 * len * x, py = 100 - 86 * len * z + 26 * len * y;
+      shaft.setAttribute("x2", px); shaft.setAttribute("y2", py); tip.setAttribute("cx", px); tip.setAttribute("cy", py);
+      tip.setAttribute("r", 5 + 3 * (0.5 + 0.5 * -y));
+      shadow.setAttribute("cx", 100 + 86 * len * x); shadow.setAttribute("cy", 100 + 26 * len * y); shadow.setAttribute("rx", 3 * len * Math.sin(theta) + 1); shadow.setAttribute("ry", 1.5);
+    };
+    return s;
+  }
+  function bloch(root) {
+    var theta = 0, phi = 0;
+    var s = blochSvg(280);
+    var tilt = range(0, 180, 0), spin = range(0, 360, 0);
+    var out = readout("");
+    var X = btn("X  flip"), Z = btn("Z  half-turn of phase"), H = btn("H  tip into the air"), R = btn("Reset", "alt");
+    function draw() {
+      s.set(theta, phi);
+      var p0 = Math.cos(theta / 2) * Math.cos(theta / 2);
+      out.textContent = "P(0) = " + Math.round(p0 * 100) + "%   P(1) = " + Math.round((1 - p0) * 100) + "%   phase " + Math.round(phi * 180 / Math.PI) + "°";
+      tilt.value = Math.round(theta * 180 / Math.PI); spin.value = Math.round(((phi * 180 / Math.PI) % 360 + 360) % 360);
+    }
+    tilt.oninput = function () { theta = tilt.value * Math.PI / 180; draw(); };
+    spin.oninput = function () { phi = spin.value * Math.PI / 180; draw(); };
+    X.onclick = function () { theta = Math.PI - theta; phi = -phi; draw(); };
+    Z.onclick = function () { phi = phi + Math.PI; draw(); };
+    H.onclick = function () {
+      // H is a half-turn about the axis between x and z: (x,y,z) -> (z,-y,x)
+      var x = Math.sin(theta) * Math.cos(phi), y = Math.sin(theta) * Math.sin(phi), z = Math.cos(theta);
+      var nx = z, ny = -y, nz = x;
+      theta = Math.acos(Math.max(-1, Math.min(1, nz))); phi = Math.atan2(ny, nx); draw();
+    };
+    R.onclick = function () { theta = 0; phi = 0; draw(); };
+    root.appendChild(el("div", { class: "row" }, [s, el("div", {}, [
+      el("div", { class: "row" }, [el("label", { text: "tilt (sets the odds)" }, [tilt])]),
+      el("div", { class: "row" }, [el("label", { text: "spin (sets the phase)" }, [spin])]),
+      el("div", { class: "row" }, [out]),
+      el("div", { class: "row" }, [X, Z, H, R])])]));
+    root.appendChild(el("p", { class: "note", text: "Straight up reads 0 every time; on the equator, 50-50. The spin slider changes nothing you could measure on this one qubit. Press H from the top and the arrow lands on the equator: the coin is in the air." }));
+    draw();
+  }
+
+  /* ---------------------------------------------------------------- 3  waves + two slits */
+  function waves(root) {
+    var W = 640, Hh = 200, ph = 0;
+    var s = svg("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": "two waves and their sum" });
+    var a = svg("path", { fill: "none", stroke: C.teal, "stroke-width": 2, opacity: .8 });
+    var b = svg("path", { fill: "none", stroke: C.violet, "stroke-width": 2, opacity: .8 });
+    var c = svg("path", { fill: "none", stroke: C.gold, "stroke-width": 4 });
+    var mid = svg("line", { x1: 0, y1: Hh / 2, x2: W, y2: Hh / 2, stroke: C.line });
+    s.appendChild(mid); s.appendChild(a); s.appendChild(b); s.appendChild(c);
+    var lab = svg("text", { x: 8, y: 18, "font-size": 13, fill: C.mute, "font-family": "inherit" }); s.appendChild(lab);
+    var slider = range(0, 360, 0), out = readout("");
+    function path(f) { var d = ""; for (var x = 0; x <= W; x += 4) { var y = Hh / 2 - f(x) ; d += (x ? "L" : "M") + x + " " + y.toFixed(1); } return d; }
+    function draw() {
+      var k = 2 * Math.PI / 80, A = 34, off = ph * Math.PI / 180;
+      a.setAttribute("d", path(function (x) { return A * Math.sin(k * x); }));
+      b.setAttribute("d", path(function (x) { return A * Math.sin(k * x + off); }));
+      c.setAttribute("d", path(function (x) { return A * Math.sin(k * x) + A * Math.sin(k * x + off); }));
+      var amp = Math.abs(2 * Math.cos(off / 2));
+      out.textContent = "phase " + ph + "°  →  the sum is " + fmt(amp, 2) + "× one wave";
+      lab.textContent = amp < 0.05 ? "flat: crest meets trough" : amp > 1.95 ? "double: crest meets crest" : "";
+    }
+    slider.oninput = function () { ph = +slider.value; draw(); };
+    root.appendChild(s);
+    root.appendChild(el("div", { class: "row" }, [el("label", { text: "phase of the second wave" }, [slider]), out]));
+    draw();
+    // the two-slit screen
+    var cw = 640, chh = 220; var cv = el("canvas", { width: cw, height: chh, "aria-label": "electrons landing on a screen, one at a time" });
+    var ctx = cv.getContext("2d"); var open = 2, n = 0, timer = null;
+    var run = btn("Fire electrons"), stop = btn("Stop", "alt"), clear = btn("Clear", "alt"), slit = btn("Close one slit", "alt"), cnt = readout("0 landed");
+    function pdf(x) { var u = (x - cw / 2) / cw * 22; var env = Math.pow(Math.sin(Math.PI * u / 3.2 + 1e-9) / (Math.PI * u / 3.2 + 1e-9), 2); return open === 2 ? Math.pow(Math.cos(u * 2.6), 2) * env : env; }
+    function clearScreen() { ctx.fillStyle = "#070b13"; ctx.fillRect(0, 0, cw, chh); n = 0; cnt.textContent = "0 landed"; }
+    function fire(k) {
+      for (var i = 0; i < k; i++) {
+        var x, y; do { x = Math.random() * cw; } while (Math.random() > pdf(x));
+        y = chh / 2 + (Math.random() + Math.random() + Math.random() - 1.5) * chh * 0.5;
+        ctx.fillStyle = open === 2 ? "rgba(168,145,242,.85)" : "rgba(47,196,189,.85)"; ctx.fillRect(x, y, 2, 2); n++;
+      }
+      cnt.textContent = n + " landed" + (open === 1 ? " (one slit)" : "");
+    }
+    run.onclick = function () { if (timer) return; if (RM) { fire(3000); return; } timer = setInterval(function () { fire(40); if (n > 30000) { clearInterval(timer); timer = null; } }, 40); };
+    stop.onclick = function () { clearInterval(timer); timer = null; };
+    clear.onclick = clearScreen;
+    slit.onclick = function () { open = open === 2 ? 1 : 2; slit.textContent = open === 2 ? "Close one slit" : "Open both slits"; clearScreen(); };
+    clearScreen();
+    root.appendChild(el("h3", { text: "The two-slit screen" }));
+    root.appendChild(cv);
+    root.appendChild(el("div", { class: "row" }, [run, stop, clear, slit, cnt]));
+    root.appendChild(el("p", { class: "note", text: "Each dot is one electron. With both slits open the dots build stripes: the electron went through both as a wave and interfered with itself. Close a slit and the stripes go." }));
+  }
+
+  /* ---------------------------------------------------------------- 4  the entangled pair + Bell */
+  function pair(root) {
+    var left = null, right = null, same = 0, runs = 0;
+    var s = svg("svg", { viewBox: "0 0 360 150", role: "img", "aria-label": "two entangled coins" });
+    function mk(x) { var g = svg("g", { transform: "translate(" + x + " 70)", class: RM ? "coin" : "coin air" }); var d = svg("circle", { r: 44, fill: C.gold, stroke: C.ink, "stroke-width": 3 }); var t = svg("text", { "text-anchor": "middle", y: 14, "font-size": 36, "font-weight": 800, fill: C.ink, "font-family": "inherit" }); t.textContent = "?"; g.appendChild(d); g.appendChild(t); s.appendChild(g); return { g: g, d: d, t: t }; }
+    var link = svg("path", { d: "M130 70 Q180 20 230 70", fill: "none", stroke: C.violet, "stroke-width": 2, "stroke-dasharray": "5 4", class: "pulse" }); s.appendChild(link);
+    var L = mk(86), Rr = mk(274);
+    var mL = btn("Measure left"), mR = btn("Measure right"), re = btn("New pair", "alt"), twenty = btn("Run 20 pairs", "alt"), out = readout("");
+    function show(o, v) { o.g.setAttribute("class", "coin"); o.t.textContent = v; o.d.setAttribute("fill", v === "0" ? C.teal : C.violet); }
+    function land() { var v = Math.random() < 0.5 ? "0" : "1"; left = right = v; show(L, v); show(Rr, v); runs++; same++; draw(); }
+    function draw() { out.textContent = runs + " pairs, matched " + same + " of " + runs; }
+    mL.onclick = function () { if (left === null) land(); };
+    mR.onclick = mL.onclick;
+    re.onclick = function () { left = right = null; [L, Rr].forEach(function (o) { o.g.setAttribute("class", RM ? "coin" : "coin air"); o.t.textContent = "?"; o.d.setAttribute("fill", C.gold); }); };
+    twenty.onclick = function () { for (var i = 0; i < 20; i++) { runs++; same++; } land(); };
+    root.appendChild(s);
+    root.appendChild(el("div", { class: "row" }, [mL, mR, re, twenty, out]));
+    root.appendChild(el("p", { class: "note", text: "Measure either coin: 0 or 1 at random. The other lands to match. Neither had picked until the first was caught." }));
+    // Bell: three angles, 0°, 120°, 240°. Same setting: always match. Different: quantum matches 25%; any pre-written plan matches at least 33%.
+    var q = { same: 0, sameN: 0, diff: 0, diffN: 0 };
+    var bo = readout(""), bell = btn("Run 300 Bell trials"), bclear = btn("Clear", "alt");
+    var bars = el("div", { class: "tally" }); var bq = el("i"), bc = el("i");
+    bars.appendChild(el("span", { text: "quantum, different angles" })); bars.appendChild(el("div", { class: "bar" }, [bq])); var bqn = el("span", { text: "–" }); bars.appendChild(bqn);
+    bars.appendChild(el("span", { text: "lowest any hidden plan can go" })); bars.appendChild(el("div", { class: "bar t" }, [bc])); var bcn = el("span", { text: "33%" }); bars.appendChild(bcn);
+    bc.style.setProperty("--v", 1 / 3);
+    function trial() {
+      var a = Math.floor(Math.random() * 3), b = Math.floor(Math.random() * 3);
+      var d = Math.abs(a - b) * 120 * Math.PI / 180; var pm = Math.cos(d / 2) * Math.cos(d / 2);
+      var m = Math.random() < pm;
+      if (a === b) { q.sameN++; if (m) q.same++; } else { q.diffN++; if (m) q.diff++; }
+    }
+    function bdraw() {
+      var r = q.diffN ? q.diff / q.diffN : 0; bq.style.setProperty("--v", r); bqn.textContent = q.diffN ? Math.round(r * 100) + "% of " + q.diffN : "–";
+      bo.textContent = "same angle: " + q.same + "/" + q.sameN + " matched";
+    }
+    bell.onclick = function () { for (var i = 0; i < 300; i++) trial(); bdraw(); };
+    bclear.onclick = function () { q = { same: 0, sameN: 0, diff: 0, diffN: 0 }; bdraw(); };
+    root.appendChild(el("h3", { text: "The Bell test" }));
+    root.appendChild(el("p", { class: "small", text: "Each side picks one of three angles at random, 120° apart, and measures. When both pick the same angle the coins always match. When they pick different angles, quantum mechanics says they match one time in four. If each coin carried a hidden plan for all three angles, the different-angle match rate could not fall below one in three. Run it." }));
+    root.appendChild(el("div", { class: "row" }, [bell, bclear, bo]));
+    root.appendChild(bars);
+    bdraw();
+  }
+
+  /* ---------------------------------------------------------------- 5  the circuit */
+  function circuit(root) {
+    var step = 0; var states = [[1, 0, 0, 0], [0.7071, 0, 0.7071, 0], [0.7071, 0, 0, 0.7071]];
+    var names = ["00", "01", "10", "11"];
+    var s = svg("svg", { viewBox: "0 0 420 130", role: "img", "aria-label": "a two-qubit circuit: H then CNOT" });
+    [40, 95].forEach(function (y, i) { s.appendChild(svg("line", { x1: 30, y1: y, x2: 400, y2: y, stroke: C.ink, "stroke-width": 2 })); var t = svg("text", { x: 8, y: y + 5, "font-size": 14, fill: C.ink, "font-family": "inherit" }); t.textContent = "q" + i; s.appendChild(t); });
+    var hbox = svg("rect", { x: 110, y: 22, width: 36, height: 36, rx: 6, fill: C.teal, stroke: C.ink, "stroke-width": 2 }); s.appendChild(hbox);
+    var ht = svg("text", { x: 128, y: 47, "text-anchor": "middle", "font-size": 20, "font-weight": 800, fill: "#fff", "font-family": "inherit" }); ht.textContent = "H"; s.appendChild(ht);
+    var cl = svg("line", { x1: 240, y1: 40, x2: 240, y2: 95, stroke: C.ink, "stroke-width": 2 }); s.appendChild(cl);
+    var cd = svg("circle", { cx: 240, cy: 40, r: 7, fill: C.ink }); s.appendChild(cd);
+    var cx = svg("circle", { cx: 240, cy: 95, r: 13, fill: "none", stroke: C.ink, "stroke-width": 2 }); s.appendChild(cx);
+    s.appendChild(svg("line", { x1: 240, y1: 82, x2: 240, y2: 108, stroke: C.ink, "stroke-width": 2 })); s.appendChild(svg("line", { x1: 227, y1: 95, x2: 253, y2: 95, stroke: C.ink, "stroke-width": 2 }));
+    var cursor = svg("line", { x1: 70, y1: 10, x2: 70, y2: 120, stroke: C.gold, "stroke-width": 3, "stroke-dasharray": "6 4" }); s.appendChild(cursor);
+    var b1 = blochSvg(150), b2 = blochSvg(150);
+    var bars = el("div", { class: "tally" }); var ib = [], ns = [];
+    names.forEach(function (nm) { bars.appendChild(el("span", { text: nm })); var i = el("i"); ib.push(i); bars.appendChild(el("div", { class: "bar" }, [i])); var n = el("span"); ns.push(n); bars.appendChild(n); });
+    var next = btn("Step"), back = btn("Back", "alt"), out = readout("");
+    var cap2 = el("div", { class: "small mute", text: "" });
+    function draw() {
+      cursor.setAttribute("x1", [70, 190, 330][step]); cursor.setAttribute("x2", [70, 190, 330][step]);
+      var st = states[step];
+      st.forEach(function (a, i) { ib[i].style.setProperty("--v", a * a); ns[i].textContent = Math.round(a * a * 100) + "%"; });
+      out.textContent = ["start: both 0", "after H: q0 is in the air", "after CNOT: entangled"][step];
+      b1.set(step === 0 ? 0 : Math.PI / 2, 0, step === 2 ? 0 : 1);
+      b2.set(0, 0, step === 2 ? 0 : 1);
+      cap2.textContent = step === 2 ? "After the CNOT neither qubit has an arrow of its own. The pair has one state, and it is not two arrows." : "";
+    }
+    next.onclick = function () { step = Math.min(2, step + 1); draw(); };
+    back.onclick = function () { step = Math.max(0, step - 1); draw(); };
+    root.appendChild(s);
+    root.appendChild(el("div", { class: "row" }, [next, back, out]));
+    root.appendChild(el("div", { class: "row" }, [el("div", {}, [el("div", { class: "small mute", text: "q0" }), b1]), el("div", {}, [el("div", { class: "small mute", text: "q1" }), b2]), el("div", {}, [el("div", { class: "small mute", text: "odds of each readout" }), bars])]));
+    root.appendChild(cap2);
+    draw();
+  }
+
+  /* ---------------------------------------------------------------- 6  Grover */
+  function grover(root) {
+    var N = 16, marked = 10, amp, steps;
+    var W = 640, Hh = 220, s = svg("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": "sixteen amplitudes, one marked" });
+    s.appendChild(svg("line", { x1: 20, y1: Hh / 2, x2: W - 10, y2: Hh / 2, stroke: C.line }));
+    var rects = [];
+    for (var i = 0; i < N; i++) { var r = svg("rect", { x: 24 + i * 38, width: 28, fill: i === marked ? C.gold : C.teal, rx: 3 }); rects.push(r); s.appendChild(r); }
+    var lab = svg("text", { x: 24, y: 16, "font-size": 13, fill: C.mute, "font-family": "inherit" }); s.appendChild(lab);
+    var stepB = btn("Step"), reset = btn("Reset", "alt"), out = readout("");
+    function init() { amp = []; for (var i = 0; i < N; i++) amp.push(1 / Math.sqrt(N)); steps = 0; }
+    function draw() {
+      amp.forEach(function (a, i) { var h = a * 160; rects[i].setAttribute("y", h >= 0 ? Hh / 2 - h : Hh / 2); rects[i].setAttribute("height", Math.abs(h)); });
+      var p = amp[marked] * amp[marked];
+      out.textContent = "step " + steps + ": chance of reading the marked box " + Math.round(p * 100) + "%";
+      lab.textContent = "bars are amplitudes; below the line is negative. The best number of steps for 16 boxes is 3.";
+    }
+    stepB.onclick = function () {
+      amp[marked] = -amp[marked];                                   // the oracle: flip the sign of the marked one
+      var mean = amp.reduce(function (a, b) { return a + b; }, 0) / N;
+      amp = amp.map(function (a) { return 2 * mean - a; });        // reflect about the mean
+      steps++; draw();
+    };
+    reset.onclick = function () { init(); draw(); };
+    root.appendChild(s); root.appendChild(el("div", { class: "row" }, [stepB, reset, out]));
+    root.appendChild(el("p", { class: "note", text: "Each step: flip the marked bar, then reflect every bar about the average. The marked one grows; go past the peak and it shrinks again." }));
+    init(); draw();
+  }
+
+  /* ---------------------------------------------------------------- 7  the period wheel */
+  function period(root) {
+    var Nn = 15, base = 7, x = 0, visited = {}, timer = null;
+    var s = svg("svg", { viewBox: "0 0 260 260", width: 300, role: "img", "aria-label": "remainders of powers of the base, divided by 15" });
+    var spots = [];
+    for (var i = 0; i < Nn; i++) { var a = -Math.PI / 2 + i * 2 * Math.PI / Nn; var cx = 130 + 100 * Math.cos(a), cy = 130 + 100 * Math.sin(a); var c = svg("circle", { cx: cx, cy: cy, r: 12, fill: C.line, stroke: C.ink, "stroke-width": 1.5 }); var t = svg("text", { x: cx, y: cy + 4, "text-anchor": "middle", "font-size": 11, "font-family": "inherit", fill: C.ink }); t.textContent = i; s.appendChild(c); s.appendChild(t); spots.push(c); }
+    var hand = svg("line", { x1: 130, y1: 130, x2: 130, y2: 30, stroke: C.gold, "stroke-width": 4, "stroke-linecap": "round" }); s.appendChild(hand);
+    var run = btn("Run"), stepB = btn("Step"), reset = btn("Reset", "alt"), sel = el("select");
+    [2, 4, 7, 8, 11, 13].forEach(function (b) { var o = el("option", { value: b, text: b }); if (b === base) o.selected = true; sel.appendChild(o); });
+    var out = readout(""), seq = el("div", { class: "mono small" }), fact = el("div", { class: "small" });
+    function modpow(b, e, m) { var r = 1; for (var i = 0; i < e; i++) r = (r * b) % m; return r; }
+    function gcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
+    function draw() {
+      var v = modpow(base, x, Nn); var a = -Math.PI / 2 + v * 2 * Math.PI / Nn;
+      hand.setAttribute("x2", 130 + 88 * Math.cos(a)); hand.setAttribute("y2", 130 + 88 * Math.sin(a));
+      visited[v] = true; spots.forEach(function (c, i) { c.setAttribute("fill", visited[i] ? C.teal : C.line); });
+      out.textContent = base + "^" + x + " mod 15 = " + v;
+      var list = []; for (var i = 0; i <= Math.max(x, 8); i++) list.push(modpow(base, i, Nn)); seq.textContent = list.join("  ");
+      var r = 1; while (modpow(base, r, Nn) !== 1) r++;
+      var p = gcd(modpow(base, r / 2, Nn) - 1, Nn), q = gcd(modpow(base, r / 2, Nn) + 1, Nn);
+      fact.textContent = r % 2 ? "period " + r + " is odd: pick another base" : "period " + r + ", so " + base + "^" + (r / 2) + " = " + modpow(base, r / 2, Nn) + "; gcd(" + (modpow(base, r / 2, Nn) - 1) + ", 15) = " + p + " and gcd(" + (modpow(base, r / 2, Nn) + 1) + ", 15) = " + q + "  →  15 = " + p + " × " + q;
+    }
+    stepB.onclick = function () { x++; draw(); };
+    run.onclick = function () { if (timer) { clearInterval(timer); timer = null; run.textContent = "Run"; return; } if (RM) { for (var i = 0; i < 8; i++) { x++; } draw(); return; } run.textContent = "Pause"; timer = setInterval(function () { x++; draw(); if (x > 60) { clearInterval(timer); timer = null; run.textContent = "Run"; } }, 500); };
+    reset.onclick = function () { x = 0; visited = {}; draw(); };
+    sel.onchange = function () { base = +sel.value; x = 0; visited = {}; draw(); };
+    root.appendChild(el("div", { class: "row" }, [s, el("div", {}, [el("div", { class: "row" }, [el("label", { text: "base" }, [sel]), run, stepB, reset]), el("div", { class: "row" }, [out]), seq, fact])]));
+    root.appendChild(el("p", { class: "note", text: "The hand only ever lands on a few spots, and the repeat length is the period. A quantum computer finds that length for numbers too big to step through, by making every wrong length cancel." }));
+    draw();
+  }
+
+  /* ---------------------------------------------------------------- 8  decoherence */
+  function decay(root) {
+    var s = blochSvg(280); var T = 1, t = 0, phase = 0, raf = null, last = 0;
+    var temp = range(0, 100, 30), out = readout(""), start = btn("Start"), reset = btn("Reset", "alt"), stepB = btn("Step", "alt");
+    function T2() { var u = temp.value / 100; return 0.4 + 24 * Math.pow(1 - u, 3); }   // seconds of demo time
+    function draw() { var len = Math.exp(-t / T2()); phase += 0.02 * (0.2 + temp.value / 100) * (Math.random() - 0.5) * 8; s.set(Math.PI / 2, phase, len); out.textContent = "arrow length " + fmt(len, 2) + "  ·  t = " + fmt(t, 1) + " s  ·  T2 ≈ " + fmt(T2(), 1) + " s"; }
+    function frame(now) { if (!last) last = now; var dt = (now - last) / 1000; last = now; t += dt; draw(); if (t < 4 * T2() + 2) raf = requestAnimationFrame(frame); else raf = null; }
+    start.onclick = function () { if (raf) return; if (RM) { return; } last = 0; raf = requestAnimationFrame(frame); };
+    stepB.onclick = function () { t += 0.5; draw(); };
+    reset.onclick = function () { if (raf) cancelAnimationFrame(raf); raf = null; t = 0; phase = 0; draw(); };
+    temp.oninput = draw;
+    root.appendChild(el("div", { class: "row" }, [s, el("div", {}, [el("div", { class: "row" }, [el("label", { text: "cold ← drafts → warm" }, [temp])]), el("div", { class: "row" }, [RM ? stepB : start, RM ? start : stepB, reset]), el("div", { class: "row" }, [out])])]));
+    root.appendChild(el("p", { class: "note", text: "The arrow starts on the equator, a coin in the air. Drafts jostle its phase and shrink it toward the centre, where it is a plain coin with no lean and no phase: decohered. The times are made up for the demo; the shape of the curve is not." }));
+    draw();
+  }
+
+  /* ---------------------------------------------------------------- 9  the vote + the threshold */
+  function vote(root) {
+    var q = [0, 0, 0], logical = 0;
+    var s = svg("svg", { viewBox: "0 0 360 120", role: "img", "aria-label": "three qubits and two checks" });
+    var qs = [], cs = [];
+    [60, 180, 300].forEach(function (x, i) { var c = svg("circle", { cx: x, cy: 40, r: 26, fill: C.teal, stroke: C.ink, "stroke-width": 2 }); var t = svg("text", { x: x, y: 48, "text-anchor": "middle", "font-size": 22, "font-weight": 800, fill: "#fff", "font-family": "inherit" }); s.appendChild(c); s.appendChild(t); qs.push({ c: c, t: t }); });
+    [120, 240].forEach(function (x) { var r = svg("rect", { x: x - 22, y: 82, width: 44, height: 28, rx: 6, fill: C.line, stroke: C.ink, "stroke-width": 1.5 }); var t = svg("text", { x: x, y: 101, "text-anchor": "middle", "font-size": 13, "font-family": "inherit", fill: C.ink }); s.appendChild(svg("line", { x1: x - 60, y1: 66, x2: x, y2: 82, stroke: C.mute })); s.appendChild(svg("line", { x1: x + 60, y1: 66, x2: x, y2: 82, stroke: C.mute })); s.appendChild(r); s.appendChild(t); cs.push({ r: r, t: t }); });
+    var set = btn("Store a 1"), noise = btn("Noise"), fix = btn("Fix"), reset = btn("Reset", "alt"), out = readout("");
+    function draw() {
+      qs.forEach(function (o, i) { o.t.textContent = q[i]; o.c.setAttribute("fill", q[i] ? C.violet : C.teal); });
+      var s1 = q[0] ^ q[1], s2 = q[1] ^ q[2];
+      cs[0].t.textContent = s1 ? "differ" : "agree"; cs[1].t.textContent = s2 ? "differ" : "agree";
+      cs[0].r.setAttribute("fill", s1 ? C.red : C.line); cs[1].r.setAttribute("fill", s2 ? C.red : C.line);
+      var where = s1 && s2 ? "middle" : s1 ? "left" : s2 ? "right" : null;
+      out.textContent = where ? "the checks point at the " + where + " qubit, without reading any of them" : "all agree: stored " + logical;
+    }
+    set.onclick = function () { logical = 1 - logical; q = [logical, logical, logical]; draw(); };
+    noise.onclick = function () { var i = Math.floor(Math.random() * 3); q[i] ^= 1; draw(); };
+    fix.onclick = function () { var s1 = q[0] ^ q[1], s2 = q[1] ^ q[2]; if (s1 && s2) q[1] ^= 1; else if (s1) q[0] ^= 1; else if (s2) q[2] ^= 1; draw(); };
+    reset.onclick = function () { logical = 0; q = [0, 0, 0]; draw(); };
+    root.appendChild(s); root.appendChild(el("div", { class: "row" }, [set, noise, fix, reset, out]));
+    root.appendChild(el("p", { class: "note", text: "Each check asks two neighbours whether they agree. It learns nothing about the value stored, only whether something changed. Two flips at once would fool it; a bigger code catches more." }));
+    draw();
+    // threshold
+    var d = range(3, 15, 3, 2), p = range(1, 30, 5), o2 = readout("");
+    var W = 640, Hh = 220, g = svg("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": "logical error against code size" });
+    g.appendChild(svg("line", { x1: 50, y1: 190, x2: 620, y2: 190, stroke: C.mute })); g.appendChild(svg("line", { x1: 50, y1: 20, x2: 50, y2: 190, stroke: C.mute }));
+    var yl = svg("text", { x: 6, y: 24, "font-size": 12, fill: C.mute, "font-family": "inherit" }); yl.textContent = "error"; g.appendChild(yl);
+    var xl = svg("text", { x: 560, y: 210, "font-size": 12, fill: C.mute, "font-family": "inherit" }); xl.textContent = "code size d"; g.appendChild(xl);
+    var pathA = svg("path", { fill: "none", stroke: C.gold, "stroke-width": 3 }); g.appendChild(pathA);
+    var mark = svg("circle", { r: 7, fill: C.gold, stroke: C.ink, "stroke-width": 2 }); g.appendChild(mark);
+    var thr = svg("line", { x1: 50, x2: 620, stroke: C.red, "stroke-dasharray": "5 4" }); g.appendChild(thr);
+    var thrT = svg("text", { x: 560, "font-size": 12, fill: C.red, "font-family": "inherit" }); thrT.textContent = "physical error"; g.appendChild(thrT);
+    function pl(pp, dd) { return 0.1 * Math.pow(pp / 0.01, (dd + 1) / 2); }   // the textbook shape: (p/p_th)^((d+1)/2)
+    function y(v) { var lv = Math.log10(Math.max(v, 1e-12)); return 190 - (lv + 12) / 12 * 170; }
+    function draw2() {
+      var pp = p.value / 1000; var dd = +d.value; var path = "";
+      for (var k = 3; k <= 15; k += 2) { var px = 50 + (k - 3) / 12 * 560; path += (k === 3 ? "M" : "L") + px + " " + y(pl(pp, k)); }
+      pathA.setAttribute("d", path); mark.setAttribute("cx", 50 + (dd - 3) / 12 * 560); mark.setAttribute("cy", y(pl(pp, dd)));
+      thr.setAttribute("y1", y(pp)); thr.setAttribute("y2", y(pp)); thrT.setAttribute("y", y(pp) - 5);
+      var le = pl(pp, dd);
+      o2.textContent = "physical error " + fmt(pp * 100, 1) + "%  ·  d = " + dd + "  ·  logical error " + (le < 1e-3 ? le.toExponential(1) : fmt(le, 3)) + (pp < 0.01 ? "  (under the line: bigger is better)" : pp > 0.01 ? "  (over the line: bigger is worse)" : "  (on the line)");
+    }
+    d.oninput = draw2; p.oninput = draw2;
+    root.appendChild(el("h3", { text: "The threshold" }));
+    root.appendChild(g);
+    root.appendChild(el("div", { class: "row" }, [el("label", { text: "physical error per gate" }, [p]), el("label", { text: "code size" }, [d]), o2]));
+    root.appendChild(el("p", { class: "note", text: "The curve is the textbook shape for a surface code with a 1% threshold, not a measurement. Under the line, each two steps of size cut the error by the same factor; over it, growing the code adds error. Willow, December 2024: 3×3 → 5×5 → 7×7, error halving each step." }));
+    draw2();
+  }
+
+  var DEMOS = { coin: coin, bloch: bloch, waves: waves, pair: pair, circuit: circuit, grover: grover, period: period, decay: decay, vote: vote };
+  document.querySelectorAll("[data-demo]").forEach(function (root) { var f = DEMOS[root.getAttribute("data-demo")]; if (f) { root.innerHTML = ""; f(root); } });
+
+  // timeline reveal
+  var tl = document.querySelector(".tl");
+  if (tl) {
+    if (!RM && "IntersectionObserver" in window) { tl.classList.remove("nojs"); var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" }); tl.querySelectorAll("li").forEach(function (li) { io.observe(li); }); }
+  }
+})();
+</script>
+</body>
+</html>

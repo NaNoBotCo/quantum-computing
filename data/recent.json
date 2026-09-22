@@ -1,0 +1,549 @@
+{
+ "fetched": "2026-09-22T15:21:45+00:00",
+ "arxiv": [
+  {
+   "title": "A thermal microwave bus for neutral atom quantum computing",
+   "url": "http://arxiv.org/abs/2609.24933v1",
+   "date": "2026-09-21T17:27:28Z",
+   "authors": "Matthew J. H. Kendall, Christopher J. Watson, Michael Ben Shem, and others"
+  },
+  {
+   "title": "Quantum Computing Solution of the Bethe-Salpeter Equation for Relativistic Scalar Bound States via Tensor-Network VQE",
+   "url": "http://arxiv.org/abs/2609.24282v1",
+   "date": "2026-09-21T08:44:27Z",
+   "authors": "Gerhard Hellstern"
+  },
+  {
+   "title": "Modular fault-tolerant quantum computing on a non-CSS code",
+   "url": "http://arxiv.org/abs/2609.22572v1",
+   "date": "2026-09-18T20:49:59Z",
+   "authors": "Robert Freund, Friederike Butt, César Benito, and others"
+  },
+  {
+   "title": "Single-atom-based asynchronous photonic interconnect for scalable modular quantum computing",
+   "url": "http://arxiv.org/abs/2609.21961v1",
+   "date": "2026-09-18T16:18:29Z",
+   "authors": "Jérémy Raskop, Nadav Kandel, Yaniv Amichy, and others"
+  },
+  {
+   "title": "Ensemble Dependence of the Critical Exponent at a Quantum Error Correction Threshold",
+   "url": "http://arxiv.org/abs/2609.21886v1",
+   "date": "2026-09-18T15:14:55Z",
+   "authors": "Idan Dror, Moshe Goldstein"
+  },
+  {
+   "title": "From sparse quantum-computing data to atomistic simulation with universal machine-learning interatomic potentials",
+   "url": "http://arxiv.org/abs/2609.21536v1",
+   "date": "2026-09-18T09:27:06Z",
+   "authors": "Tuan Minh Do, Yuichiro Yoshida, Kenji Ishihara, and others"
+  },
+  {
+   "title": "Unconditional quantum advantage from a two-round CHSH problem in one dimension",
+   "url": "http://arxiv.org/abs/2609.21237v1",
+   "date": "2026-09-18T02:31:19Z",
+   "authors": "Yonghae Lee, Jeonghyeon Shin, Soojoon Lee"
+  },
+  {
+   "title": "Blind Quantum Computation with a Small Quantum Server",
+   "url": "http://arxiv.org/abs/2609.20729v1",
+   "date": "2026-09-17T17:21:47Z",
+   "authors": "Daniel Lovsted, Filipa C. R. Peres, Joshua Nevin, and others"
+  },
+  {
+   "title": "FT-Weave: Real-Time Compilation Framework for Reconfigurable Fault-Tolerant Quantum Architectures",
+   "url": "http://arxiv.org/abs/2609.20573v1",
+   "date": "2026-09-17T15:32:17Z",
+   "authors": "Wan-Hsuan Lin, Milan Kornjača, Chen Zhao, and others"
+  },
+  {
+   "title": "Scalable logical qubits",
+   "url": "http://arxiv.org/abs/2609.20549v1",
+   "date": "2026-09-17T15:15:13Z",
+   "authors": "Matthias Troyer, Chetan Nayak, John Martinis"
+  },
+  {
+   "title": "Neutral atom quantum computing for materials science and quantum chemistry",
+   "url": "http://arxiv.org/abs/2609.20464v1",
+   "date": "2026-09-17T14:25:31Z",
+   "authors": "J. D. Pritchard"
+  },
+  {
+   "title": "The effects of shot noise on the quantum computation of NMR spectra",
+   "url": "http://arxiv.org/abs/2609.20406v1",
+   "date": "2026-09-17T13:53:33Z",
+   "authors": "Sebastian Walch, Keith R. Fratus, Jan-Michael Reiner, and others"
+  },
+  {
+   "title": "State-Space-Based FIR Filtering on a Quantum Computer",
+   "url": "http://arxiv.org/abs/2609.20331v1",
+   "date": "2026-09-17T13:04:29Z",
+   "authors": "Roope Salmi, Davide Rocchesso, Vesa Välimäki"
+  },
+  {
+   "title": "Quantum WalkScore: Benchmarking Quantum Computers on the Graph Nodefinding Problem",
+   "url": "http://arxiv.org/abs/2609.19931v1",
+   "date": "2026-09-17T09:08:36Z",
+   "authors": "Noé Olivier, Michel Nowak"
+  },
+  {
+   "title": "Quantum computers will not be that different: A blueprint for quantum computer architecture at scale",
+   "url": "http://arxiv.org/abs/2609.19639v1",
+   "date": "2026-09-17T03:30:15Z",
+   "authors": "Torsten Hoefler, Matthias Troyer"
+  },
+  {
+   "title": "Efficiently estimating failure rates of fault-tolerant logical non-Clifford blocks",
+   "url": "http://arxiv.org/abs/2609.19485v1",
+   "date": "2026-09-16T22:57:23Z",
+   "authors": "Julio C. Magdalena de la Fuente, Thomas R. Scruby"
+  },
+  {
+   "title": "Securing quantum error correction against misleading advice from AI agents",
+   "url": "http://arxiv.org/abs/2609.19090v1",
+   "date": "2026-09-16T17:26:54Z",
+   "authors": "A. Barış Özgüler"
+  },
+  {
+   "title": "Impact of a CSS quantum error correction code in underwater quantum key distribution",
+   "url": "http://arxiv.org/abs/2609.18666v1",
+   "date": "2026-09-16T13:42:52Z",
+   "authors": "Juliette Florin, Nicolas Le Josse, Arnaud Coatanhay, and others"
+  },
+  {
+   "title": "Optical Quantum Computing",
+   "url": "http://arxiv.org/abs/2609.18347v1",
+   "date": "2026-09-16T09:11:03Z",
+   "authors": "Hamza Hasnaoui, Leonardo Limongi, Taira Giordani, and others"
+  },
+  {
+   "title": "Quantum Compiler Design for Fault-Tolerant Quantum Computing",
+   "url": "http://arxiv.org/abs/2609.17465v1",
+   "date": "2026-09-15T17:05:49Z",
+   "authors": "Chenghong Zhu, Jiahan Chen, Keming He, and others"
+  },
+  {
+   "title": "Large-scale NMR simulation on a trapped-ion quantum computer",
+   "url": "http://arxiv.org/abs/2609.17102v1",
+   "date": "2026-09-15T12:34:32Z",
+   "authors": "Pascal Stadler, Alec Owens, Etienne Granet, and others"
+  },
+  {
+   "title": "Environmental records unlock universal quantum computation from thermal decoherence",
+   "url": "http://arxiv.org/abs/2609.16460v1",
+   "date": "2026-09-15T00:26:12Z",
+   "authors": "Chenfeng Cao, Qi Zhao"
+  },
+  {
+   "title": "Error-corrected function estimation advantage in multiparameter Hamiltonians",
+   "url": "http://arxiv.org/abs/2609.16226v1",
+   "date": "2026-09-14T18:57:24Z",
+   "authors": "Erfan Abbasgholinejad, Lorcán O. Conlon, Sean R. Muleady, and others"
+  },
+  {
+   "title": "$d$-pod realization of nonadiabatic holonomic quantum computation",
+   "url": "http://arxiv.org/abs/2609.16216v2",
+   "date": "2026-09-14T18:49:10Z",
+   "authors": "Oskar Axelsson, Claes Fälth, Elias Henriksson Lindberg, and others"
+  },
+  {
+   "title": "Towards Block-Level Fault-Tolerant Quantum Simulation on Small High-Rate Non-CSS Codes",
+   "url": "http://arxiv.org/abs/2609.16159v1",
+   "date": "2026-09-14T18:04:08Z",
+   "authors": "Zhuangzhuang Chen, Narayanan Rengaswamy"
+  },
+  {
+   "title": "A Modular, Topology-Aware Software Stack for Entanglement-Based Distributed Quantum Computing",
+   "url": "http://arxiv.org/abs/2609.15728v1",
+   "date": "2026-09-14T15:24:47Z",
+   "authors": "Luke Andreesen, Shobhit Gupta, Sean Sullivan, and others"
+  },
+  {
+   "title": "Reducing Decoding Latency in Quantum Error Correction by Early Starting Clustering",
+   "url": "http://arxiv.org/abs/2609.15612v2",
+   "date": "2026-09-14T14:08:39Z",
+   "authors": "Tommaso Peduzzi, Lukas Bödeker, Markus Müller, and others"
+  },
+  {
+   "title": "Engineering dissipation and control pulses for high-fidelity fault-tolerance quantum computing",
+   "url": "http://arxiv.org/abs/2609.15477v1",
+   "date": "2026-09-14T12:34:36Z",
+   "authors": "Shao-Wei Xu, Zhe-Yuan Zhang, Yi-Tong Shi, and others"
+  },
+  {
+   "title": "Fermionic quantum error correction is never free",
+   "url": "http://arxiv.org/abs/2609.15059v1",
+   "date": "2026-09-14T05:25:04Z",
+   "authors": "Yifan Tang, Ingo Roth, Philippe Faist, and others"
+  },
+  {
+   "title": "NAQsim: Full-Stack Architecture Simulation Framework for Fast and Space-Efficient Neutral Atom Quantum Computing",
+   "url": "http://arxiv.org/abs/2609.14478v1",
+   "date": "2026-09-13T12:34:19Z",
+   "authors": "Yosuke Ueno, Shinichi Sunami, Toshihide Hinokuma, and others"
+  }
+ ],
+ "news": [
+  {
+   "title": "Quantum protocol securely verifies a device's position using stations 2 km apart",
+   "url": "https://phys.org/news/2026-09-quantum-protocol-device-position-stations.html",
+   "date": "2026-09-22",
+   "source": "Phys.org — quantum physics"
+  },
+  {
+   "title": "IonQ and SDT partner to advance quantum computing in South Korea - Seeking Alpha",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNXpUcXRlcTU0Y1lDMGIzcFpNV3N3MjZEMFFVSXlXQkNxNWdRalROM01HdmVCamJYbkMxdWVOSFVWOXdlS2kwYlVXSkwycUZaYTBVc3RkNU11a0F1RGZGdk51NkVfcWR6ckdMWVQ2elZ6WEl0empmV2wwcGlLY1ZIVnM1MWlpajAyZElueGxrS2w0SUV1cWRfbDl0eFB0aU15azFtNg?oc=5",
+   "date": "2026-09-22",
+   "source": "Seeking Alpha"
+  },
+  {
+   "title": "IonQ Stock in Focus After Major South Korea Quantum Deal - Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdVZTbDZnRV9LcEJMNjFDVUxlUlFJVkw0Z2o3M1NwQUhHUVU2SUd3WU9FQmlfX2dnd1FzS09ZdENFSGR0cEtpbmhYRmNXWHNFM1VMMVE5YXBZX0M4dG5lOVZQVFBUQ29xa2p4X1VJcG5EX0dkS3h3WFV4dGx5Zmp2T0tjcGFudnNTSGc1aVIzMkNQcG81S2Nn?oc=5",
+   "date": "2026-09-22",
+   "source": "Yahoo Finance"
+  },
+  {
+   "title": "QuEra and HPE Partner on Fault-Tolerant Quantum Computing for HPC - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTGRmbHp6TTkzSzFOall4TmtiTUQzYVpqYzVpN0JjRXlCbmtYRmpha0VLeUdCczVNZFEwbGVvM09HWk5QVDVMXzdqamd2WUJLUUtIODhyNWV1Znp6a0dwM3FNVnp0cTluQWJ1TnptajcxVzF3TDdUUy1KVGQ5WlBYd202eDFyNEoyUUc5LTlKVkxKdw?oc=5",
+   "date": "2026-09-22",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "AI & Quantum Computing Safety Require Cryptographic Posture Management - Forbes",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNOEFIZzZCbVllLURvX1hpQ0ttTXJ6MXpRdV9CaWQxTVJGWlR4TWpJbEV0TXIzUVNmVC1zbWM1NGktTXhzbEVRdno4X0NwS210T01Nb2Nnb0dYcFJPTDBtdjNmOEJYaHZ3QmtFbHA5X0tZQ0FUbnVsY1BBTlE5eER1dFN5cTE0dWY4bWs0Szcwa0gzM2UwcVEzNE1Oa0pydS1nY2xiSWYtdVNuYXdSWENZbDg2NVNkMlRGeS1aMnlrdFBYN3hxa3hhVE5ZcEpXc3ItUGxOaDlJU0c0Yk0?oc=5",
+   "date": "2026-09-22",
+   "source": "Forbes"
+  },
+  {
+   "title": "SEALSQ and WISeKey Expand Quantum Highway™, Connecting Sovereign Technology Centers from Silicon to Quantum and Space - Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQNWRac0lwZGYxaklFOFppbmxkM3pmWlMtUGdMc2RvZDVJMXNUUEVSRXR3dGNmMkRLdXZVZ1ZiQlB0aVFOSGdEbmVNbDhtaEloeXJxWC1ONWFrTEhZbUNDTkJJMkNHSzRNcVJkZ0hiRS1vcmwtOE1YbEtEbERaMkthYWRjMURjd1NTZ0Z5UFhkaEVndUVjc0xtd2hzZW9Td2c?oc=5",
+   "date": "2026-09-22",
+   "source": "Yahoo Finance"
+  },
+  {
+   "title": "For the first time, scientists watch sound jump between quantum states - ScienceDaily",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8xSmxGdVZkQm5nQnlzQ3VJXzlqLUFuazA5OHNSTnVkR2tXVzlweFUyNjhkUms0STU5dzRfUWVWOWl0UDMwZzd6UDRZemNMTWVQTWVGWU1NbzRaUnhwSUZLcW5UbHplN2Nmek1yWUJkMA?oc=5",
+   "date": "2026-09-22",
+   "source": "ScienceDaily"
+  },
+  {
+   "title": "IonQ and SDT Partner on Quantum Computing and Manufacturing in South Korea - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNTmluTTN3ZjE2eHp5Y1ptNUMxRHAtV2NkMm1qMUJnWkV0M0FZLWlPbGZiaEQ2RkhWcG10M1JMWmo1TG1vUnFEZkVpd21MRmxPdGlEVmZZejlHdGNsODc1UlRxYVQ4WXRjZ0xhTnJqVnN4UzFXMnlNSkh0cFpRQTdHODJaSjN2N3Q3RDdySmJGN1pnN19sMEE?oc=5",
+   "date": "2026-09-22",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "QuEra Computing Joins Capital of Quantum - PR Newswire",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNamJGZzBUNl9ZbHVZdWFnbDFNanFZY2lIdklVUUEzNld4QlNEaWRDcDJhenQ3QThLNlJuTUhjOFNaN0d6SXc2UXJtLWtMWmJaN3VOOVBkdUEyWHNQSzRfbjlvNklfdmJvbW81ejVQbnVaNHY2bnE3cVZsd3p5dzBLLUdNMUx1dEE3ODNIdlhGNlNrdUtVMmtOUzVNTV8?oc=5",
+   "date": "2026-09-22",
+   "source": "PR Newswire"
+  },
+  {
+   "title": "Will This Major Industry Showcase Boost Quantum Computing Stocks? - Investor's Business Daily",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcTQwLWE4eDlhMERELWpkaDNxVjl5UGpIN19yNzBCMFFscUo2d29hc3NEUDZLdnRQeDgxdmJYZlpRUG1KNHZkcTY3d2c0WmZPNlhJYll6RnhhTTRvWmtMV000elVtS0x1NEF3cFM3Q3dubExVVnBhNE9nR1lqYXE3eEFRVVNFT1pMQ3Q4TGRsbExXOTZpTmJLaHpfMWpmQQ?oc=5",
+   "date": "2026-09-22",
+   "source": "Investor's Business Daily"
+  },
+  {
+   "title": "IonQ, Rigetti Computing, D-Wave Quantum, and Quantum Computing Inc. Are Sending Shockwaves Through Wall Street With This $895 Million Warning - Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNMmhaUzlFbzh3Y1NfN001YkVDSDVJOGZPU1VXcVE2aElPVGwyTUlCRVlVSVR0eW4ySFdLMkNXbXl6Z2RhS243cmppaXBQMzVkTUZLLVpVTFJUREo4VmRNVUZXMm42eVNrMC1WeHNsZVVMdWRGS1dTNTJ1ZlZlQThyZHpfSkFPR0JDc2FBUFVsUURRdV8tdHFQZzJ3?oc=5",
+   "date": "2026-09-22",
+   "source": "Yahoo Finance"
+  },
+  {
+   "title": "British quantum computing company establishing US headquarters in Arlington - WJLA",
+   "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQN0dNXzRHa0p3WC1GZFhFMEhGRTZUd3M5blVVM2VfZmZoSUFSN1ZLd2pSaDcyTkJpZ3UtcVhBOUJjbFNMMHVKMndZSTFxSFU1R25vLVFFRWEtQWFDT3BoeVEtME1iR3AyOFhTZXF5c2RYSnVCc3F5cXBrSnZVN1dvWFhYb3JUXzR3Z2JlZlNCLUlQV3VyQWQ4MEJFRTkxTzZiOEVEdjhXWU95YkRCSWpSYTRHVnBlQkM3R3g5Y1VvZGN4WTlXR0hZWE9CbmFvV3ZyMVFodE1Jb0QyZDQ4RS11SDg1ZTc4ZFkwM191N1haWUowQnU3RmlBRUhYa25zMWs?oc=5",
+   "date": "2026-09-22",
+   "source": "WJLA"
+  },
+  {
+   "title": "How Europe’s IQM became a quantum computing soloist - Diginomica",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1EWGZrWFdBSGRCeTAybno1bWNOeVNMeWFVcWxBeEFnbTlxUFR6YXZ1bkJCSVdTSTEwa0c2T1hJZFI2LXNHN2NIalVPVnZCRXM0MU9IcWZ4amRnRGsxcW00T19yendMbUxETnR3bElMRmtNUTZsWkxMQW1MMA?oc=5",
+   "date": "2026-09-22",
+   "source": "Diginomica"
+  },
+  {
+   "title": "New Wake Forest quantum lab takes research to the next level | Newswise - Newswise",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNV2VxakhzYVlnaEoyOFNRX193ajJYS0ZHZktMOGNXY1NzNXh1UVhfUkQ3V3h2WHdGclI0WDM4SlJkUnVLVmxoY21DU2lHbDZSRnh2NGc5VVp1TXB3NGc2THdhYVVsSVRmUlhwdmVxUTdwQ00xN3JpYWt1TGlzYmExVFliRE1GWnNuQmRwang4WkxaRGN2dE5WemlB0gGaAUFVX3lxTE1XZXFqSHNhWWdoSjI4U1FfX3dqMlhLRkdmS0w4Y1djU3M1eHVRWF9SRDdXeHZYd0ZyUjRYMzhKUmRSdUtWbGhjbUNTaUdsNlJGeHY0ZzlVWnVNcHc0ZzZMd2FhVWxJVGZSWHB2ZXFRN3BDTTE3cmlha3VMaXNiYTFUWWJETUZac25CZHBqeDhaTFpEY3Z0TlZ6aUE?oc=5",
+   "date": "2026-09-22",
+   "source": "Newswise"
+  },
+  {
+   "title": "Chulalongkorn University and Qunova Computing Sign Quantum Computing MoU - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUUJubmRjRm5TVDBMQzlucUNWQnNzRDFrYnZ2NXdkX0tFMTR0bVE5Zmg2YVA1S1BXa0VnSDB6SVZjZDRoYTZ1VzAyc0dxT1dGdTZxLWUyY29NREdTMllVQmZ5U0o2ODVmc1VoWWJlTkV3aV9KdXYySlFaZVpwYmplc29FN05veGY4U0FHbw?oc=5",
+   "date": "2026-09-22",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "FAU’s Robert Loredo Launches New Book on Preparing for the Quantum Era | Newswise - Newswise",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaXFoRTl5R0tjR3BNMWxTRl9tNVJBWnYzaTRFblJNVGlsQjZuQkc2RElHbEdEWWRLSGpKUElyTDFDNFhFcl9CcUVaLUlGUXhGTk0zLUdSN1REZXBOSFYxNE9PWjZSY3c2WkJmYlVFcmw0c2FKWUlaR09wYmdpRkZSdE5JblotR3BUNzMteURwRTFYLWRzNkFLTWhOWEkwTWVfQ2plMG1lWdIBpwFBVV95cUxNaXFoRTl5R0tjR3BNMWxTRl9tNVJBWnYzaTRFblJNVGlsQjZuQkc2RElHbEdEWWRLSGpKUElyTDFDNFhFcl9CcUVaLUlGUXhGTk0zLUdSN1REZXBOSFYxNE9PWjZSY3c2WkJmYlVFcmw0c2FKWUlaR09wYmdpRkZSdE5JblotR3BUNzMteURwRTFYLWRzNkFLTWhOWEkwTWVfQ2plMG1lWQ?oc=5",
+   "date": "2026-09-22",
+   "source": "Newswise"
+  },
+  {
+   "title": "Quantum Computing in focus as Titan Partners starts with Buy rating (QUBT:NASDAQ) - Seeking Alpha",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWmtWTXpPZEhHbHh2dVB3Nl9PZjZLU0hlUzNDODhNaHRrTDJUajZvUk82QjlaSUhWLURzY2N6XzFPY25MclFrNHZKdjdWOGhZeHI4ZWpXN2lOZ1V2UFNzYngxV2FUNTcxem00bTFuaC1TNkZ4MGltUG9Ic1B5cE1mYjlEeFZGamRoRERVeUUzSmNPX2VTVmhlbnF2UHI1eXJraTR4bFhVVGQ?oc=5",
+   "date": "2026-09-22",
+   "source": "Seeking Alpha"
+  },
+  {
+   "title": "IonQ Just Raised 2026 Revenue Guidance. This Quantum Computing Pure-Play Looks Like a Brilliant Buy Now. - The Motley Fool",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeDc2V2daU3k3amhVa0hxTFlZNXZjSWw5djVWMmdtcENwUDdnYVFSOFNjQ01YUnZHSUtzNHVrX0c0TXZ1S25ENm5KU1BLc2JpRDZEeHlCY2h6MG56cGRTSjU0UWdvXzRDUHJaOTFHTDNoZnlzU1I1OVNaMlc5ZnR6amxkbkRDakpFelBUSzJncnFodUtIZ21tSQ?oc=5",
+   "date": "2026-09-22",
+   "source": "The Motley Fool"
+  },
+  {
+   "title": "Microsoft Quantum, QOLAB Propose Higher Bar For ‘Scalable’ Logical Qubits - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcXY4dC1SZW5ybkZiNnBrRGpBNzZpbnUxZVgzRnM2eXZvMFhKaG02WHBrM01JMUFUcmcySy1EYU13MzJza1VuSnlWQkFyOVhVRW9tcHFTaWlkWW9pY0VqMXBzN2swU1NVQWNPb0lsaktVdlJjZFhiSFpQUnl5WDF6UVRwdXBZTUtLYkRyb2VSOWNDUWdFa2xqQzdQYmNSYV9QSFdObHdRTmlvaC1fM0Z5eUd3?oc=5",
+   "date": "2026-09-22",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "Chula And Qunova Computing Sign Agreement To Advance Quantum Technologies - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBtQldQN0diSFF6c1p1X2lraVdfOWVuMmlUdWVYLW1qNldmWTYwSk9JUFZ6RmJPeFFWNHlQMGxCZGowQUk4aEFWeE5YbHFiM1pINnFCUU12cW1rbUNZZGUzLUFMcG54OVRDeTdWeVJUSUY3Wmt4MkE?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "IQM Reports Three Continents Buy Quantum Computers—and The Software To Use Them - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9TeFRPNDM5b0E2NkduZVpMSzlmaVl6NzVhMFkwcjZmTHZsdkp2RHZIU1NxNTZQTkJKZ0dVY2pXTWRwcml0QWt0WXBPcmE0Z05FcEowU1U3MjhBS3JPSVNKaGlPTVFWalJHNGk0ekVMM3V3dXhodmRFNA?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "IonQ and SDT Expand South Korea Partnership Into Quantum Hardware Production - citybiz",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU2tfUWpfMENmeWVDSjBoQkNxdTRGOXpMMWxDSVlTYVI3Q1FoeGpTTlAwZ3d0ck9lbXBsR2Z0bk4tQW5KT1AtdGhiNXBGWkFWY05lZkFOLXh6R0F6WU5PeFBMSGVsanRCNUQ5cVRBYW9Db0MxWlc1aGZPdHd0UWdnZ3lDZmxYbERVLWZlZ2hoVm9iTlRHbllxNWxHY2lGZThxVDFNTi1MdmEtdm1oQkdQWDV4RmFEZw?oc=5",
+   "date": "2026-09-22",
+   "source": "citybiz"
+  },
+  {
+   "title": "Pasqal To Share First-half Results - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5tRmxfdW5uY3dMRmFzbHcxNExNbHZKZWx3VHh1YjFiN1BNVGhGaW1paFJYUWl0Q0tCVVN4dWYxSGxRYmVWQTZsV2JjdEVkRXZrRGN3LXgxMkk5WnNjWmxhSW9qWlMtbG5taXA4YzZ3?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Quantum Software Firm QuantrolOx Joins UC Berkeley’s Quantum Hub - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1CVkFINml4dnVIbC1NZUxkb20xS2I3S2RhZUl6b2N1R2RJeEdURnpFRTJBQk5mcEZCbzlVcUthRkZTdm1CNnVXa0NQa1lUMGJrdXhNQmJJUmFuNUxBVkxVbHdrRjRkbi1jVjZMSXZUUWY0SVFzR3dR?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Korea-France Quantum Alliance Targets Global Leadership - 조선일보",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPbnNUb2dQQUx0ZlFUTFhoZF90NUxTLWY4SS1KRjFOUmM0azJfVHBmYVRhVk9VVExkZXd2ek1EeERkaGEtVHR1N2pEWndLX2JOdXFiQXlPOGd3NFVibFpvamdRcV9LTG52UWlNTjJkR0JJdlhRdkVvSUllMjlrN0t2c1drbTlDSERI?oc=5",
+   "date": "2026-09-22",
+   "source": "조선일보"
+  },
+  {
+   "title": "Roberto Mauro To Lead Pasqal’s Quantum Product Strategy Now - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5LR1R6czRPcGRKaWx2dV81cWhnWldmSW1EQkMwRUg4UV9KcGpmaUpNZTFGTWFGV2lTZTlHRkVZX1R6a0cwTEtFME9YQ3Nyek9jYkt0cmdwMDhqZVZOdFhrSzNZWkVQUEtGQS0zMGVJWmNYRERQNEczRQ?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Solowin’s Quantum Leap Targets 100+ Megawatts Of AI Computing By 2028 - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tTjJidUtGV3oyN0VOME54MWFlXzNHZGQwNHFnSU5EN0o3UWlxSF9LZWI5eHpsM1pYQjhXUlBQeWVMeXZPRjhwdlZLdEZlcFdhV2dTMFEtbUx0cFhpcGdNM21yelY2a1VTWmNyR1FmQ2xfbEJoMU9KX25tWUVVdw?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Sectigo Turns Quantum Awareness Into Action - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBneUF4TTY1d2czb3lhcENFQTRBZVFUTVN1OWZtakltWXA4Z1pmc3lGeE5VeENveHgzS3pLQW5FdWpsQkltQzV2LS1MWlNUMVAycEo4c0tzTExyaFQ5T0YyQmZRQXZWTmZTeVNuVWNwLU9vcVhQMDcw?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "From Microwave Layout To Quantum Dynamics - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5vNWM4Y3dUc3JzT1lUMWx1ZEswdmJUbDlSbzBTN1R1MDNGYVJfb2xzNnJ6bDYyaTBwaXJjZmVwU1FBUlVJX1NOZ2FmZHViVXpsSFpnZEJjWjhiMW5Td2ZWa2FlOTY4RWNYWHJOSVRvWXJCZFphTDZSSGJCRQ?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Quera Computing Preserves Structure For Scalable Quantum Programs - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZjdCVVJOdlU3VnUzZ0tPZ0tzWHBPb1otZXB6UFU4YjJtejhZWUJOVmFQSU1mYThhbDdGeGE4YzBOOEI2b0pqZDZHUWNIMWRhaWFyQXBDNHEwMl91THFsV2VfUzlqbFMydWRZeGRVZ2FqTm1iT0d2YzRReDVtZFEwanVkaDg1djFwa2tuVVU4bW5OUndl?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "ITMO & Yandex’s Quantum Science Tour Of Russia Featured Donuts & Prizes. - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1SUlpfSy1DQ3gwWkVJUmRrSTBUaHNwRTFQVkVQMjdCNV9FNTRNTDdyUDZlclRIcGtNczZmcEpMNlRqTzJtbEljTkNxODlWWnhJZ2NNTWZtelRkOG1CR2RMZ3pPdnIzb0hRU1RLU0JKOXE?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Leverhulme Backs Superfluid Helium Qubit Design With £1.3M UKRI Fellowship - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMUx3OTZ1N2FFc1IzdVBnSGFGa3RSZmdQcmZsQWU2ZW1scndONG9sVERNRFRoanJIczNUbnh4eW93Rk5fSnFqNGtBT0xvNldpN3JiWlhlR3E1bjhMY3JTeXBTcXJpXzh1NjFhMFNqeFkyQlZzc09TMWdXMUVmVW1ITA?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Mphasis Teams Up With Copa Airlines For Global Quantum Computing Challenge - Sahi",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeU5pZFduQ3VXekVNWXNsSnRpOGtiTzdseVZ2eThaYUh5R0d5c2pySHJLd1VUVlNsV2tEVXRCSE8wNlh0SW1kZTNYUUE3UFlfRS1PalZydkhDSThfa3l6STdHTjVfcUN3ZWRTZ3NvRGFuTHpfY2lnR0h3d0lkZ1p0Wmg0MlFBWjFzUUt3MUFCaE1fNzF0R1BnYkgxN1NCdm5CYkE?oc=5",
+   "date": "2026-09-22",
+   "source": "Sahi"
+  },
+  {
+   "title": "Why 100 Logical Qubits Became Quantum Computing’s New Benchmar - Technology Org",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNR3JIVkJDN2FIb3JSZ3FKSTZzdDZkV1QxRGd1WGtiN2wwS3labUtHYWVGaHV2MERmOFA2VllteGlCcnN2dGRvZnQ5TTFtWXNQeUV6a29lY25WWnpnZlhYLUhYR19WR3d1U0JXOXV6U0NPcHdaNVdHQzB4REs1aWVMZm8wQktpZ0UyUVFvUTIteXNnRWFCdW9VQ2NKdXo0YzRObHRPSndfU0FGb28?oc=5",
+   "date": "2026-09-22",
+   "source": "Technology Org"
+  },
+  {
+   "title": "Researchers Find Noise Can Induce Classically Simutable Quantum Phases - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWGxQZ2xZa2FEZENHeXhFQkc1ZHJVUWc4Vm5CelJvdmVuMk1UTDFZSXFmMGN2bG5RYXdlY2dQQlAwR3VaRll6LW43YzYzUUg2VkFWX1ZrZHJ1aUtXOFFfS3FqWHBMaXJuM3pKNWlYRWZoRmV3WU42Z09ndEpfR1QybEJkVFhXNWF2V2RTN2VDWTdRTlBW?oc=5",
+   "date": "2026-09-22",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Quantum communication protocol enables three users to establish a shared secure key",
+   "url": "https://phys.org/news/2026-09-quantum-communication-protocol-enables-users.html",
+   "date": "2026-09-21",
+   "source": "Phys.org — quantum physics"
+  },
+  {
+   "title": "Scientists teleport quantum states across 100 parallel optical channels",
+   "url": "https://phys.org/news/2026-09-scientists-teleport-quantum-states-parallel.html",
+   "date": "2026-09-21",
+   "source": "Phys.org — quantum physics"
+  },
+  {
+   "title": "IonQ and SDT Announce the First Strategic Partnership to Bring Both Advanced Quantum Computing and Quantum Networking to the Asia-Pacific Region - businesswire.com",
+   "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQR3l5MnhHdkljM3lSMmFPclgyWlFmTEVQWXV0eXVzSnppSHl0ZzY5ZHdzNXJDYVFEcUdqaW1lQmhyQmV5dlg3V0JQZFA4MXZzTjVVSDlwdzFlQnlpdldFdW9INmlFZGt5c0lRY0JYN2FjTDBwS1RuYXYycjMxcEoxRnJGQnpJT1dNMVA0d0lVbVg1TUhOdVJUeERhcG5HQkQxdDMxVXIwMVVQRThhS05Fd2R6M2hGZ3RsaERfRUZBSkZHWG1ySHFoSkZpWGVnUE9NejVOZ0xMWnY4Wi1LckZfYmNLYllkNzhubm12NFhScWdhZ21Yc0k5V191Q3hLemxTVkx2MlUxeDBOZ1phdmpWY1ZKbU5uUUpsSHZXY0V2NzNIYnlpTzR1ZA?oc=5",
+   "date": "2026-09-21",
+   "source": "businesswire.com"
+  },
+  {
+   "title": "Quantum computing company opening U.S. headquarters in Ballston - ARLnow",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWEpUeWtBLWlJNXN6VXFobEJQVzBUYUgzU1BVcm9oTFA2dC1GcWxqbkVjX21DWElPZnpMekhxLUhZNGVUNHdHbFpMNGJ3ZXhjNW5IRFpxTW1NS3dkOWFTMGhVX21tY3ktS3dycmMwdWhIc0NBZXJTLXJtVE5ZWm5BaWRMMEVNS3ZJOXZ4NHBYNGVVZkUtNXRzaVVON3E3UQ?oc=5",
+   "date": "2026-09-21",
+   "source": "ARLnow"
+  },
+  {
+   "title": "IonQ taps former IBM exec Charles Robinson as first public sector quantum security chief - bizjournals.com",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNXVFY05JRThGWUFsNmNiVjBWVlZnRlJYY19ZV3VZdXVoZHVPOHIwNHFuRHJ1QzFhRkRHMlpMdnRBMUpqWkFrNlJfbVlIclNJVTJiQ1ZjYWlzWWMxcTFTV2xyT0ZJZmpQMm5vOGpZaGduc2VRc3FhaWk0QWdaVERrV0ZWemtwTHZqZDRJZkJjODdWelVRSXBPYnlXY3UtbVAwSjN2Wi1nMA?oc=5",
+   "date": "2026-09-21",
+   "source": "bizjournals.com"
+  },
+  {
+   "title": "Meet the Quantum Computing Stock Growing Faster Than Nvidia - The Motley Fool",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNa3dqQnltY1RFOVhPTURRWVZmYWMzUUhHWWpvR0FscTE2MkhGYlRsSzNveDBxVDNaeHlQRklyVXZ6bk11QzN3OFhKWkFPSHMweFFQWHlZd1Qya0tLQXRUTmhqNHlSNFFoNkRnVDlEREtYSno3MndlNFdjLU1Xbm8tUmFYaXlFUFQwc2RNZ2FvNVRRT1ZWSVQzSw?oc=5",
+   "date": "2026-09-21",
+   "source": "The Motley Fool"
+  },
+  {
+   "title": "1,000x Speedup: Scientists Just Broke Through a Major Quantum Computing Bottleneck - SciTechDaily",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTTYzS05OSlVDWTluNE1Xd1hWTXZaYmVTSWRRYjRZR1BnXzBFXzE0QlNjSUd5OTBmcnJnUmxwcE16MWZTazRQWjhMOVZXWHVPZTFyYmFkNDZFQnprVVo0SmxVUkxydXVaTEMtc1MyYjl0all4YkZvV01FVTBSMGxaZWtpM1pOaXYtaGhyWGlUc3ZpVXRraXlQc00zM2VvWmEyLWE0VlNlX3BvZw?oc=5",
+   "date": "2026-09-21",
+   "source": "SciTechDaily"
+  },
+  {
+   "title": "Physicists convert microwaves to light helping quantum computers communicate over optical networks - The Brighter Side of News",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOWtLRmZxOE90NE9LakQwcUhTYzI4U0JnOGN3ZDhnaFJ4cVJXcW84Q3ppMFFDSVZVbHJmTVhHcDhvMkYxaDk1bEhPb2wtTEhxMG96cFVHWFE0QmFBTVZMR3N0ZzNFelN5dkRocWJSTG5Fd2RyUXdmNkRlUVNRVEE4YVE4bE0xYlUzbGQ0YTctR200YjIzMVpYellsM0o0bHV0S0FOZk9WNUFkdTJnamFLb2V6UlAzWHhYai15NjY3Zm5PV1lRUDB2YVllVG5ndDNRRU5J?oc=5",
+   "date": "2026-09-21",
+   "source": "The Brighter Side of News"
+  },
+  {
+   "title": "Intel CEO Sees Quantum Computing Working Alongside CPUs and GPUs - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSkZaOHZnV1VJZlM4RHFvVHdRMkR4RE9YNTFuNW1pbzU2SEFZdElvRjc0Sk1IU3ZOdzlKcTRtMDRmSkwzZzdQN3k3MldDbGdYeE5TaDRXa2NudVFDbFdzOTlGZkV0TjFXYlRRX0FjTV9fdlJwSlBQZHBURDY4aEpRdGN4dnEyY0R4Qkx5WWZSOFBqMHptX3RJNktHbU51YXdwUTlTOTRxLWpxdw?oc=5",
+   "date": "2026-09-21",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "What's New in Quantum Computing? Nasdaq Explores the Sector's Rise in Innovation and Investment - Nasdaq",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVWFmbXRXblJ0YWhEclVOYVlGREZnLWk4RWJia0dVYk1SLUtqeElPQmRSejg1NVdEdFZBX0h6dzJTOHFlRTNyTDhMWFVJM0FJNTdOOEx0T3RfOXR5MUFGX1ZlaHNpUTRheEJfVjBPUjltVTJ6Yy1PRnZpNFBZM0hJVE9kQ2p0VXFnWXFrd1ROQXU1RWVtTVE?oc=5",
+   "date": "2026-09-21",
+   "source": "Nasdaq"
+  },
+  {
+   "title": "Noon Business Lunch 9/21/26: Fed outlook, quantum computing, 3D printing, Bitter & Sweet Cocktail Boutique - WGN Radio 720",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxObS1IcXIza19BUG1UbWdnUDNLakFVWEFsRENzTnJkZ05Jbl8xRDUtVTlVRVl6S2JOeFhxTmpFcDcwU1VSWTE4VU9rQXNWb2RjaWQ2UU5RbkJEcmRLdEdReUF6S1FDVUttNENfY3hHV2FkUHF5NFRSWmo5Mkk4ZFF6MFNiV2tHVkh5TU1JY055aGJ6TE40ckw0Tjk4bElFS2ZnQS1IS3g3dFhWWG5TQ2Z6Z2ZfaGJfeTZlUFQyQ0tNQW9hWVFfcHExSVB6QmNid2R4dzVV0gHYAUFVX3lxTE5EQ1gwVHdIQ2RCX3drdlJCUW40R0VxRXFjS1dXWENTOC14VTMtMmt3NXJWOWxNbHlCbGhHbmlYTTRCYzVnMEZMWDlaVjhlX3doTEl5eDJ4YjZTTTV2aDdQZkZFQWl4RXFzMjdFV01KTi0wRkF5Um1RdDFkMlRFY3g3ZG9nSTk1b3V2R3FrenRLaFZiMDR1Z3FlOEU4azdXdmU2YkJIM0hITVJ0UEliZkk4Zk5DdkdBOGJvd2daTEVpSEFyY2xqZzhjeVo2RUZmRTVnbC1JZjc2TQ?oc=5",
+   "date": "2026-09-21",
+   "source": "WGN Radio 720"
+  },
+  {
+   "title": "Riverlane Establishes US Headquarters in Maryland to Accelerate Quantum Computing Innovation - HPCwire",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQR3hHQUJlVkVUeW1uaTRPWkhrX1FFUXZUZ204bjFCZWxzSGVIeDN1SzBpTTN6OTNBSmNMcURxeGhVcXhYbFN5SVRrQVlScmRCaHVWcHVvWXVoUUNXS3o0cmlhX2tsOE1MSjRYdlJJT25ET3RWR3prcTBCU2JIM21WVmllcnNSWGhyWFIzSFRrdkd2dmRIY0QwdVhrRmxNUjZ0V2pIeF9oOFAteU16ZXgxOVFpVFNqX1lpR0c5c0JaV2ExZVNSaGFadzV3?oc=5",
+   "date": "2026-09-21",
+   "source": "HPCwire"
+  },
+  {
+   "title": "IEEE-Presented Study Tests Quantum-to-Classical Handoff for Distributed Computing - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUThXSHktaG5Lb2ZfTFE4ZHlIdjNCb0EtWVBJUmxtV2xlTXhQVm15QUs0ejFZellVUTRLMENwVzNNWVZaeEV5WFNwV1owczdiUTNYZGZuQVlRUEZ3M0V0bkM2b2l4enNrY3lNZDNvdkpjYkU5UXZIcVdWOVNycVU3ZlJOMlRlTU9oZ3pJUDRKWGdyMENwbmpOQWtJN1d3RnhUQUtTN3hGYzF6eTd2VzBpZkFlWWNaZDdGSzM0SzNKdm8?oc=5",
+   "date": "2026-09-21",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "Singapore: Turning Quantum Research into Business Opportunity - EE Times",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaWVha2NJSkZQX1Q1Sm9ocHZ1MElnLWtkT2hkRUpocHdINHRhWFpJSGVRc1VNcWV2a3VmQTN0LXplS3R3bjJXUnd3bXZiakJ0S0swSVowcTN5dW9kRW4wOTFjNE5WR1lBQjJ0dllUT2drMTNTNGR5Sm55aHk2QzVkYUFpNnNHMnRhVlhNaWZR?oc=5",
+   "date": "2026-09-21",
+   "source": "EE Times"
+  },
+  {
+   "title": "Diraq and Dell Test Hybrid Quantum-Classical Computing in Sydney - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPam1jZElqMk9uQWR2S0J2Q3BXanVYWHNZQUVUSUp5Y1FXNlp0UTI0Rm1lZjNPbkw5NnFoZFBDSWtZajhyRjlmdVhGbS04czROQ0ludXBzcndBZG11XzN6cy1tbzRGckg5bzhuaU82SmdXQTJneUszdEZmSVk4RFhRU2tvczZqLWtLczV0YTFaOE8?oc=5",
+   "date": "2026-09-21",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "Phasecraft to Establish U.S. Headquarters in Arlington, Virginia - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbFZyTlU5YzBLMXQwSmk1Y0h6VU80Vko0VUkyVW40QUIydEwycFU5NzhMNzhWTURYMUE1QzdEWGFuR3hxSHlKUmRkNzZ1aDEzeEhBMGVBWTdHMmdoYnhJUElWTFZua3dBdWZCOUJLeWRVTC1QWmxjWlpuRVJFclVSaWszX2xFX2lFT1d4SXhvb1U?oc=5",
+   "date": "2026-09-21",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "US launches $215m competition for fault-tolerant quantum computers - Innovation News Network",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNNURkTnR4SnREMGNMRjB0N3FoRTJrczczckxGQjBpUW0za1JfdG9nNTNkVFFLMDlsc0NxdXNuX1lqOTFwN1hVUU9rLVMya2ttT0RCTFd5aFlVUURIM1FfRDdqaXZVZW15X3kwamRGU2pUN3BMdDdmanpxZHFlb0dOd0pGNU9pSWJIdDZCdDJ0TDBQajhBVGZfLWZRVjNQMl9Fd20xQWQ3N3Q4Ym0wb2sw?oc=5",
+   "date": "2026-09-21",
+   "source": "Innovation News Network"
+  },
+  {
+   "title": "Virginia Lands 19 New Quantum Jobs With Phasecraft's Expansion - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE02dV9QNHowNXZFVDRMUGc3WE5ULXdRV0U4NVFFUE1mODZRVUQ4MzFSYVVabHktOFA4aEJYWllnSkVCakVqcEM3ek4wM29yV1hxSEpyRUw2LTFiemRRSmFId0ZhTW92QzJwUFNDdE5POF9IOUxzYzc4NQ?oc=5",
+   "date": "2026-09-21",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "Diraq and Dell Work on Orchestration for Hybrid Quantum-HPC Workflows - HPCwire",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcTJiZVZITklXU252WmNELUIzc2dUeDJCQkhjcXRUZzBEOFd6aVVJSmE5VVNOUi02VjY1VmNxZ0JXOVA5d0RNendXQUlhc0xFdVdWOFJDb1JtcHo1NzQxMTlSdTY3QU0xTGI4a2swSzVEd2ZONDFZZ0RxdlNRV2tlaWJhUWZGY3hxd01PNHFrZHYxa2NQaXdkd0hTbFFRY2hMdFlUS0RmSXpvTmc?oc=5",
+   "date": "2026-09-21",
+   "source": "HPCwire"
+  },
+  {
+   "title": "IonQ Heads These 3 Quantum Computing Stocks To Watch - simplywall.st",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQT25SSjVmTFFvQmxjck0zcHBRSno1MFRPWU5oX3Z0Y09WZ01YTXJoSUFUUWVzMm9aQmI2X0NhaVZKMzlkSElTVUpZUzNmRXBSZnlJVktoWWtlVzB3WVJOakRMTzZQWVVPTGNfR0x2S21FZlJaZ2p6MmxqWUx6NHJoeG9tMG90M0xVNVpTRnJvRmhkSGQyQ255aTYzS1Rjb2pJTDhpZkl3Z1I1eFBuUFhCZG1NSTNxU3h2UG9z0gHAAUFVX3lxTE5lTWRLbHhkZEFvc0JnaEVrY1A5d2ZxR1liRGZhS0RGMWNYN3B0dHUwUDd1Qm80b1NNWm1ocWxuNHR6Y2dLcThweXRIenhCWnJYSUJfU3Ewbmc5RDIwVU9ZZjQ0TEpHR04tQTU3cFl5U3UzQXBCNGtTUFgwdEJBZEJYVXRaVFVHUTdNY1hFLWhEYm9yREdsSXB4TnRuQWxCbkN4ajVfYVQ2LTZlcjFIVTgwRlhkTXp0a3BHLXdzM2pRTQ?oc=5",
+   "date": "2026-09-21",
+   "source": "simplywall.st"
+  },
+  {
+   "title": "Chulalongkorn University and AIST Sign MoU on Quantum Technology - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFQxeXJiVmRlYlQ2dUtlSkh2Zl8yOVN4N3I2WW1Tc29yU3lLMHJCbFQtaGFWY1ViU0hkcHVPU0ZnTmZkM2t5dU9rU2hkTl9pWUZsS2oyWXpUaHZ6My1vOXNZaDBkRjQwd2FtZEowRm1vcmdRdGRTTTZzWVRaMl9LdnhIQjNidHBPVmxJ?oc=5",
+   "date": "2026-09-21",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "GlobalFoundries Finalizes $375M CHIPS Award for Quantum Technology R&D - The Quantum Insider",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbWYwdUxRYTFrYXRwX3RJZUhSaGhKcEI2VVZERTZReWIyT2JtZEdaQlhtRDQ1UkVRcUEzVmhLVG53VURKVlZneGRXd2hjTG1PNWQ3VHYxS2pHbGpCdGhna0dNeTI5b0Y4LUNDRjVvQk9MeGVsNW5fUzRJMGdENnFINWtvRWpXZXpaak5BZ3lB?oc=5",
+   "date": "2026-09-21",
+   "source": "The Quantum Insider"
+  },
+  {
+   "title": "What In-House Counsel Should Know About Quantum Risk: What To Do Now - JD Supra",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONDhZaFFlWUVjOXR0dTVla1p0SVUxTGgwTHNqeDBzRHdIZXFtaW5JRE13M0xpc0VsLV80UFdROGgzM3l3NVd3aVY0Z2IwUUdWV3JfczlCUTNNc3A1bjBSS1dIZGdXSFE1MnVIbUdkRWcxMTY5YUJPOUhqVnc4R181SDRMVThTSlFFQXc?oc=5",
+   "date": "2026-09-21",
+   "source": "JD Supra"
+  },
+  {
+   "title": "Diraq And Dell Link Quantum Chip To HPC For Faster Workflows - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBsT3llUGtiLUN2Z3BiYnlwYlFXRFl4SGlRVE1TbXNXTzAzQnZzU3RKMnhOZENzX211cXhKWGYyZDNLRzRwb2ZEdnJLN0NjS09DellXaV9vRmsyVkphT0g4S3dDeEhBQWRMZWtZU19idS1UcGRlRF80dWRB?oc=5",
+   "date": "2026-09-21",
+   "source": "Quantum Zeitgeist"
+  },
+  {
+   "title": "$50 Million Fuels Fortaegis’ Push For Quantum-resistant Security - Quantum Zeitgeist",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObVlVYV92MGwtVEg0WE93SFFzeFczUW85dExEVjFNbUFyQmxCX1FjQ3hfeDNnZTMxZFlvYTh6VE1PejQxX2cwZGNJUXEtMlp4TXplRG5jSHctbTV0SEExZ21mZ1F0Z2VuREkyVTFmbjlvNXhRUXQxSG9SOWRjY0ZXdk1uZw?oc=5",
+   "date": "2026-09-21",
+   "source": "Quantum Zeitgeist"
+  }
+ ],
+ "errors": [],
+ "_about": "Written by tools/fetch_recent.py. Titles as published, unread by a person. The hand-kept ledger is developments.json."
+}

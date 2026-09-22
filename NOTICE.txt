@@ -1,0 +1,8 @@
+Quantum Computing, plainly — https://nanobotco.github.io/quantum-computing/
+
+Code (tools/, tests/, publish.sh, the workflow): MIT, see LICENSE.
+Text, data (data/*.json) and pictures (build/img, docs/img): CC BY 4.0,
+https://creativecommons.org/licenses/by/4.0/ — use it, credit NaNoBotCo and link back.
+
+The pictures are computed in tools/draw.py; no photograph or stock image is used.
+Facts carry their sources in the data files; those sources keep their own terms.
