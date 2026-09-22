@@ -72,6 +72,7 @@ Elsewhere from the same publisher
 - Hand Poke — https://nanobotco.github.io/hand-poke/ — 28 traditions of marking skin by hand — the leg-tattoo zone of Burma, the Shan States and Lanna, counted
 - Black Holes, Drawn — https://nanobotco.github.io/black-holes/ — black holes modelled and drawn from the equations — generators, the past, present and future, the legends
 - Goin' Fast — https://nanobotco.github.io/goin-fast/ — a dirt-simple explainer about speed — twenty measured speeds from the ground under the house to light, and what each one costs
+- The Three-Body Problem — https://nanobotco.github.io/three-body/ — the mathematics of the three-body problem in plain words, with the orbits found rather than copied
 - Amulet Atlas — https://nanobotco.github.io/amulet-atlas/ — amulets, charms and talismans worldwide
 - Carolina Barbecue — https://nanobotco.github.io/carolina-barbecue/ — barbecue in North and South Carolina
 - Wing Country — https://nanobotco.github.io/buffalo-wings/ — the American chicken wing
