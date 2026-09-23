@@ -96,7 +96,7 @@ def page(title, body, depth=0, desc="", canonical="", jsonld=None, wide=False, c
 <div class="bots">For the machines: <a href="{r}api/timeline.json">timeline.json</a> <a href="{r}api/theory.json">theory.json</a> <a href="{r}api/machines.json">machines.json</a> <a href="{r}api/developments.json">developments.json</a> <a href="{r}api/recent.json">recent.json</a> <a href="{r}api/glossary.json">glossary.json</a> <a href="{r}llms-full.txt">llms-full.txt</a> <a href="{r}sitemap.xml">sitemap.xml</a> <a href="{r}feed.xml">feed.xml</a></div>
 <p>Text, data and pictures <a href="{LICENSE_URL}">CC BY 4.0</a>; code <a href="{REPO}/blob/main/LICENSE">MIT</a>. Every picture here is computed from an equation in <a href="{REPO}/blob/main/tools/draw.py">tools/draw.py</a>. Sources sit beside the facts they support and are listed at <a href="{r}sources/index.html">Sources</a>. Built {TODAY}.</p>
 {fleet.row_html(SELF_ID, roster=ROSTER)}
-{fleet.support_html(roster=ROSTER)}
+{fleet.support_html(self_id="quantum-computing", roster=ROSTER)}
 {fleet.maker_html(roster=ROSTER)}
 </footer>
 {f'<script>{JS}</script>' if extra_js == 'anim' else ''}
