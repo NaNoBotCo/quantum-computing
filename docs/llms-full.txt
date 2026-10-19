@@ -1,6 +1,6 @@
 # Quantum Computing, plainly
 
-Built 2026-10-12. CC BY 4.0. https://nanobotco.github.io/quantum-computing/
+Built 2026-10-19. CC BY 4.0. https://nanobotco.github.io/quantum-computing/
 
 ## Theory
 
