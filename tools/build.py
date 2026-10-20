@@ -63,7 +63,7 @@ def page(title, body, depth=0, desc="", canonical="", jsonld=None, wide=False, c
     r = rel(depth)
     ld = "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>' for o in (jsonld or []))
     nav = " · ".join(f'<a href="{r}{h}"{" aria-current=page" if h == current else ""}>{n}</a>' for h, n in NAV)
-    card = f"{SITE_URL}/img/card.jpg"
+    card = "@@CARD@@"                      # write() names this page's own card
     return f"""<!doctype html>
 <html lang="en" translate="no" class="notranslate">
 <head>
@@ -76,7 +76,8 @@ def page(title, body, depth=0, desc="", canonical="", jsonld=None, wide=False, c
 <meta property="og:site_name" content="{E(SITE_NAME)}"><meta property="og:locale" content="en_US">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc[:200])}"><meta property="og:type" content="website">
 <meta property="og:image" content="{card}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{card}">
+<meta property="og:image:type" content="image/jpeg"><meta property="og:image:alt" content="@@ALT@@">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{card}"><meta name="twitter:image:alt" content="@@ALT@@">
 {f'<link rel="canonical" href="{E(canonical)}">' if canonical else ''}
 <link rel="icon" href="{r}icon.svg" type="image/svg+xml">
 <link rel="manifest" href="{r}manifest.webmanifest">
@@ -108,7 +109,44 @@ def page(title, body, depth=0, desc="", canonical="", jsonld=None, wide=False, c
 """
 
 
+# Each page serves its own share card: img/cards/<slug>.jpg, drawn at the end of the build from the
+# page's title and description over one of the site's pictures. The home page keeps img/card.jpg.
+CARDS = []
+ART = {"": ("hero.jpg", "two sets of ripples meeting on a pond"),
+       "slits": ("band-slits.jpg", "a two-slit interference pattern"),
+       "lattice": ("band-lattice.jpg", "a checkerboard of glowing qubits"),
+       "ions": ("band-ions.jpg", "a chain of glowing ions"),
+       "sphere": ("band-sphere.jpg", "a Bloch sphere with its arrow")}
+CARD_ART = {"theory": "sphere", "theory-bit": "sphere", "theory-waves": "slits", "theory-correct": "lattice",
+            "machines": "ions", "now": "lattice", "words": "slits"}
+
+
+def _card_for(path, text):
+    slug = path[:-len("index.html")].strip("/").replace("/", "-") if path.endswith("index.html") else path[:-5]
+    if "@@CARD@@" not in text:
+        return text
+    m = re.search(r'<meta property="og:title" content="([^"]*)"', text)
+    d = re.search(r'<meta property="og:description" content="([^"]*)"', text)
+    title = html.unescape(m.group(1)).split(" — ")[0] if m else SITE_NAME
+    if not slug or slug == "404":
+        img, art = "card.jpg", ART[""][1]
+    else:
+        base, art = ART[CARD_ART.get(slug, "")]
+        sub = html.unescape(d.group(1)) if d else ""
+        first = re.match(r"(.{20,110}?[.!?])(\s|$)", sub)
+        if first:
+            sub = first.group(1)
+        elif len(sub) > 100:
+            cut = max(sub.rfind(c, 20, 100) for c in ":;,")
+            sub = sub[:cut] if cut > 0 else sub[:100].rsplit(" ", 1)[0]
+        CARDS.append((slug, title, sub, base, path[:-len("index.html")] if path.endswith("index.html") else path))
+        img = f"cards/{slug}.jpg"
+    alt = E(f"Card: {title}, {SITE_NAME}, over {art}")
+    return text.replace("@@CARD@@", f"{SITE_URL}/img/{img}").replace("@@ALT@@", alt)
+
+
 def write(path, text):
+    text = _card_for(path, text)
     p = SITE / path
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(text, encoding="utf-8")
@@ -447,6 +485,8 @@ def main():
             draw.PICTURES[k]()
     shutil.copytree(IMG, SITE / "img")
     home(); history(); theory_index(); theory_chapters(); machines(); now(); words(); sources(); machine_files()
+    import draw
+    draw.page_cards(CARDS, SITE / "img" / "cards", kicker=SITE_NAME, host=SITE_URL.split("://", 1)[1])
     n = len(list(SITE.rglob("*.html")))
     print(f"built {n} pages into {SITE} for {SITE_URL}: {N_EVENTS} events, {N_CHAPTERS} chapters, {N_DEMOS} demos, {N_FAMILIES} families, {N_DEVS} developments, {N_TERMS} terms, {N_SOURCES} sources")
 
